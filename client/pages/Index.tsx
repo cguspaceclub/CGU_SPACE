@@ -25,38 +25,38 @@ export default function Index() {
       {/* Moving Elements - Front Layer */}
       <div className="fixed inset-0 z-50 pointer-events-none overflow-hidden">
         {/* Flying Rocket */}
-        <div className="absolute top-1/3 left-0 animate-astronaut-float opacity-90">
+        {/* <div className="absolute top-1/3 left-0 animate-astronaut-float opacity-90">
           <div className="text-6xl transform rotate-12 animate-spin-slow drop-shadow-2xl">
             🚀
           </div>
-        </div>
+        </div> */}
 
         {/* Orbiting Satellite */}
-        <div className="absolute top-2/3 right-0 animate-satellite-orbit opacity-80">
+        {/* <div className="absolute top-2/3 right-0 animate-satellite-orbit opacity-80">
           <div className="text-5xl transform -rotate-45 animate-pulse drop-shadow-2xl">
             🛰️
           </div>
-        </div>
+        </div> */}
 
         {/* Moving Astronaut */}
-        <div className="absolute top-1/2 left-0 animate-astronaut-journey opacity-75">
+        {/* <div className="absolute top-1/2 left-0 animate-astronaut-journey opacity-75">
           <div className="text-7xl animate-bounce-slow drop-shadow-2xl">👨‍🚀</div>
-        </div>
+        </div> */}
 
         {/* Flying UFO */}
-        <div className="absolute top-1/4 left-0 animate-ufo-fly opacity-60">
+        {/* <div className="absolute top-1/4 left-0 animate-ufo-fly opacity-60">
           <div className="text-4xl animate-spin-slow drop-shadow-xl">🛸</div>
-        </div>
+        </div> */}
 
         {/* Moving Planet */}
-        <div className="absolute bottom-1/3 right-0 animate-planet-drift opacity-50">
+        {/* <div className="absolute bottom-1/3 right-0 animate-planet-drift opacity-50">
           <div className="text-5xl animate-pulse drop-shadow-xl">🪐</div>
-        </div>
+        </div> */}
 
         {/* Shooting Star */}
-        <div className="absolute top-20 left-0 animate-shooting-star opacity-80">
+        {/* <div className="absolute top-20 left-0 animate-shooting-star opacity-80">
           <div className="text-3xl drop-shadow-lg">⭐</div>
-        </div>
+        </div> */}
 
         {/* Orbiting Elements */}
         <div className="absolute top-1/4 right-1/4 animate-orbit opacity-40">
