@@ -29,7 +29,7 @@ export default function Index() {
         <div className="relative z-10 min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-5xl mx-auto">
             <h1 className="font-display text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-brand-orange via-brand-red to-brand-light-orange bg-clip-text text-transparent">
-              CGU Space Club
+              CGU SPACE CLUB
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-white/90 leading-relaxed font-medium">
               Exploring the cosmos, pushing boundaries, and inspiring the next
@@ -84,17 +84,8 @@ export default function Index() {
                   </span>
                 </div>
                 <div className="w-full h-64 mb-6 rounded-xl overflow-hidden relative group">
-                  {/* Background image with zoom on hover */}
-                  <img
-                    src="https://images.pexels.com/photos/2166/flight-sky-earth-space.jpg"
-                    alt="NASA space shuttle launching with fiery liftoff"
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-
-                  {/* Top gradient overlay */}
+                  <div className="w-full h-full bg-black group-hover:scale-110 transition-transform duration-500"></div>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-
-                  {/* Text and icon */}
                   <div className="absolute bottom-4 left-4">
                     <div className="flex items-center">
                       <Rocket className="w-6 h-6 text-brand-orange mr-2" />
@@ -104,7 +95,6 @@ export default function Index() {
                     </div>
                   </div>
                 </div>
-
                 <h3 className="text-2xl font-bold text-white mb-4">
                   Advanced Propulsion System
                 </h3>
@@ -311,17 +301,6 @@ export default function Index() {
         id="get-involved"
         className="relative py-20 px-4 sm:px-6 lg:px-8 bg-black"
       >
-        {/* Background Image */}
-        <div className="absolute inset-0 z-0 h-full w-full overflow-hidden">
-          <img
-            src="https://images.pexels.com/photos/8474714/pexels-photo-8474714.jpeg"
-            alt="Two astronauts in silver spacesuits collaborating in space environment"
-            className="w-full h-full object-cover scale-110"
-          />
-          <div className="absolute inset-0 bg-black/30" />
-          <div className="absolute inset-0 from-brand-orange/10 to-brand-red/10" />
-        </div>
-
         <div className="relative z-10 max-w-4xl mx-auto text-center">
           <h2 className="font-display text-4xl md:text-5xl font-bold mb-8 bg-gradient-to-r from-brand-orange to-brand-red bg-clip-text text-transparent">
             Get Involved
