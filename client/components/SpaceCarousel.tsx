@@ -2,7 +2,7 @@ const SpaceBackground = () => {
   return (
     <div className="fixed inset-0 z-0 overflow-hidden">
       <img
-        src="/earth1.jpg"
+        src="/earth2.jpg"
         alt="Stunning image of the Earth from space"
         className="w-full h-full object-cover object-center scale-110"
       />
