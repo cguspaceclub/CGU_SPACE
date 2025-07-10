@@ -147,11 +147,11 @@ export default function Projects() {
         </div>
 
         {/* Animated background elements */}
-        <div className="absolute inset-0 z-0">
+        {/* <div className="absolute inset-0 z-0">
           <div className="absolute top-20 left-10 w-2 h-2 bg-brand-orange rounded-full animate-pulse"></div>
           <div className="absolute top-40 right-20 w-3 h-3 bg-brand-red rounded-full animate-bounce"></div>
           <div className="absolute bottom-30 left-1/4 w-1 h-1 bg-brand-light-orange rounded-full animate-ping"></div>
-        </div>
+        </div> */}
 
         <div className="relative z-10 max-w-7xl mx-auto">
           <div className="text-center mb-16">

@@ -15,52 +15,40 @@ import {
   Twitter,
   Instagram,
   Linkedin,
-  MessageSquare,
-  Users,
   Calendar,
-  Building2,
   Navigation2,
   Globe,
 } from "lucide-react";
 
 export default function Contact() {
-  const stats = [
-    { number: "24/7", label: "Support Available", icon: Clock },
-    { number: "< 2hrs", label: "Response Time", icon: MessageSquare },
-    { number: "50+", label: "Team Members", icon: Users },
-    { number: "3", label: "Office Locations", icon: Building2 },
-  ];
-
   const contactMethods = [
     {
       icon: Mail,
       title: "Email Us",
-      primary: "contact@cguspaceclub.edu",
-      secondary: "sponsorship@cguspaceclub.edu",
+      primary: "spacesystems@cgu-odisha.ac.in",
       description: "Get in touch via email for general inquiries",
       color: "orange",
     },
     {
       icon: Phone,
       title: "Call Us",
-      primary: "+1 (555) 123-4567",
-      secondary: "+1 (555) 123-4568",
+      primary: "+91 8908828802",
+      secondary: "+91 9798376027",
       description: "Speak directly with our team members",
       color: "red",
     },
     {
       icon: MapPin,
       title: "Visit Us",
-      primary: "California Graduate University",
-      secondary: "Engineering Building, Room 201",
+      primary: "CV Raman Global University",
+      secondary: "Bidya Nagar,Mahura,Janla,Bhubaneswar -752054",
       description: "Come see our facilities and meet the team",
       color: "light-orange",
     },
   ];
 
   const officeHours = [
-    { day: "Monday - Thursday", hours: "9:00 AM - 6:00 PM" },
-    { day: "Friday", hours: "9:00 AM - 4:00 PM" },
+    { day: "Monday - Friday", hours: "9:30 AM - 5:30 PM" },
     { day: "Saturday", hours: "10:00 AM - 2:00 PM" },
     { day: "Sunday", hours: "Closed" },
   ];
@@ -73,10 +61,24 @@ export default function Contact() {
   ];
 
   const socialLinks = [
-    { icon: Facebook, name: "Facebook", color: "blue-500" },
-    { icon: Twitter, name: "Twitter", color: "blue-400" },
-    { icon: Instagram, name: "Instagram", color: "pink-500" },
-    { icon: Linkedin, name: "LinkedIn", color: "blue-600" },
+    {
+      icon: Facebook,
+      name: "Facebook",
+      color: "blue-500",
+      url: "https://www.facebook.com/profile.php?id=61572395409583",
+    },
+    {
+      icon: Instagram,
+      name: "Instagram",
+      color: "pink-500",
+      url: "https://www.instagram.com/cgu.spaceclub?igsh=bjhpYjhna3Joc2Yx",
+    },
+    {
+      icon: Linkedin,
+      name: "LinkedIn",
+      color: "blue-600",
+      url: "https://www.linkedin.com/company/cguspace-club/",
+    },
   ];
 
   const getColorClasses = (color: string) => {
@@ -112,57 +114,6 @@ export default function Contact() {
   return (
     <div className="min-h-screen bg-black text-white font-sans">
       <Navigation />
-
-      {/* Hero Section with Background */}
-      <section className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img
-            src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg"
-            alt="Modern professional office environment"
-            className="w-full h-full object-cover scale-110"
-          />
-          <div className="absolute inset-0 bg-black/70" />
-          <div className="absolute inset-0 bg-gradient-to-r from-brand-orange/5 to-brand-red/5" />
-        </div>
-
-        {/* Animated background elements */}
-        <div className="absolute inset-0 z-0">
-          <div className="absolute top-20 left-10 w-2 h-2 bg-brand-orange rounded-full animate-pulse"></div>
-          <div className="absolute top-40 right-20 w-3 h-3 bg-brand-red rounded-full animate-bounce"></div>
-          <div className="absolute bottom-30 left-1/4 w-1 h-1 bg-brand-light-orange rounded-full animate-ping"></div>
-        </div>
-
-        <div className="relative z-10 max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h1 className="font-display text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-brand-orange to-brand-red bg-clip-text text-transparent drop-shadow-lg">
-              Get in Touch
-            </h1>
-            <p className="text-xl text-white/90 max-w-3xl mx-auto font-medium leading-relaxed">
-              Ready to join our mission or partner with us? We'd love to hear
-              from you. Reach out to learn more about our projects, join our
-              club, or explore sponsorship opportunities.
-            </p>
-          </div>
-
-          {/* Stats Section */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
-            {stats.map((stat, index) => (
-              <div
-                key={index}
-                className="bg-black/40 backdrop-blur-sm border border-white/20 rounded-xl p-6 text-center hover:border-brand-orange/50 transition-all duration-300 hover:scale-105"
-              >
-                <stat.icon className="w-8 h-8 text-brand-orange mx-auto mb-3" />
-                <div className="text-3xl font-bold text-white mb-1">
-                  {stat.number}
-                </div>
-                <div className="text-white/70 text-sm font-medium">
-                  {stat.label}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Contact Methods */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-black via-brand-gray-900 to-black">
@@ -207,10 +158,11 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* Contact Form and Information */}
+      {/* Contact Form and Info */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
+          {/* LEFT COLUMN */}
+          <div className="space-y-8">
             {/* Contact Form */}
             <Card className="bg-white/5 backdrop-blur-sm border-white/20">
               <CardHeader>
@@ -231,7 +183,7 @@ export default function Contact() {
                     </Label>
                     <Input
                       id="firstName"
-                      placeholder="John"
+                      placeholder="firstName"
                       className="bg-white/10 border-white/20 text-white placeholder:text-white/60"
                     />
                   </div>
@@ -241,10 +193,20 @@ export default function Contact() {
                     </Label>
                     <Input
                       id="lastName"
-                      placeholder="Doe"
+                      placeholder="lastname"
                       className="bg-white/10 border-white/20 text-white placeholder:text-white/60"
                     />
                   </div>
+                </div>
+                <div>
+                  <Label htmlFor="phone" className="text-white">
+                    Phone Number *
+                  </Label>
+                  <Input
+                    id="phone"
+                    placeholder="+91 "
+                    className="bg-white/10 border-white/20 text-white placeholder:text-white/60"
+                  />
                 </div>
                 <div>
                   <Label htmlFor="email" className="text-white">
@@ -253,7 +215,7 @@ export default function Contact() {
                   <Input
                     id="email"
                     type="email"
-                    placeholder="john.doe@example.com"
+                    placeholder="@example.com"
                     className="bg-white/10 border-white/20 text-white placeholder:text-white/60"
                   />
                 </div>
@@ -274,7 +236,7 @@ export default function Contact() {
                   <Textarea
                     id="message"
                     placeholder="Tell us more about your inquiry..."
-                    className="bg-white/10 border-white/20 text-white placeholder:text-white/60 min-h-[120px]"
+                    className="bg-white/10 border-white/20 text-white placeholder:text-white/60 min-h-[70px]"
                   />
                 </div>
                 <Button className="w-full bg-gradient-to-r from-brand-orange to-brand-red hover:from-brand-light-orange hover:to-brand-dark-red text-white font-bold py-3">
@@ -284,116 +246,115 @@ export default function Contact() {
               </CardContent>
             </Card>
 
-            {/* Contact Information */}
-            <div className="space-y-8">
-              {/* Office Hours */}
-              <Card className="bg-white/5 backdrop-blur-sm border-white/20">
-                <CardHeader>
-                  <CardTitle className="text-white font-bold">
-                    <Clock className="w-6 h-6 text-brand-orange mr-3 inline" />
-                    Office Hours
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-3">
-                    {officeHours.map((schedule, index) => (
-                      <div
-                        key={index}
-                        className="flex justify-between items-center py-2 border-b border-white/10 last:border-b-0"
-                      >
-                        <span className="text-white/90 font-medium">
-                          {schedule.day}
-                        </span>
-                        <span className="text-brand-orange font-medium">
-                          {schedule.hours}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
+            {/* Follow Us */}
+            <Card className="bg-white/5 backdrop-blur-sm border-white/20">
+              <CardHeader>
+                <CardTitle className="text-white font-bold">
+                  <Globe className="w-6 h-6 text-brand-orange mr-3 inline" />
+                  Follow Us
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="flex space-x-4">
+                  {socialLinks.map((social, index) => (
+                    <a
+                      key={index}
+                      href={social.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={social.name}
+                      className="w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-all duration-300 hover:scale-110"
+                    >
+                      <social.icon className="w-5 h-5 text-white hover:text-brand-orange" />
+                    </a>
+                  ))}
+                </div>
 
-              {/* Meeting Times */}
-              <Card className="bg-white/5 backdrop-blur-sm border-white/20">
-                <CardHeader>
-                  <CardTitle className="text-white font-bold">
-                    <Calendar className="w-6 h-6 text-brand-red mr-3 inline" />
-                    Meeting Schedule
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-3">
-                    {meetingTimes.map((meeting, index) => (
-                      <div
-                        key={index}
-                        className="py-2 border-b border-white/10 last:border-b-0"
-                      >
-                        <div className="text-white/90 font-medium mb-1">
-                          {meeting.event}
-                        </div>
-                        <div className="text-brand-red text-sm">
-                          {meeting.time}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
+                <p className="text-white/70 text-sm mt-4">
+                  Stay connected with our latest updates, project highlights,
+                  and space exploration news.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
 
-              {/* Location */}
-              <Card className="bg-white/5 backdrop-blur-sm border-white/20">
-                <CardHeader>
-                  <CardTitle className="text-white font-bold">
-                    <Navigation2 className="w-6 h-6 text-brand-light-orange mr-3 inline" />
-                    Our Location
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-3">
-                    <div className="flex items-start">
-                      <MapPin className="w-5 h-5 text-brand-light-orange mr-3 mt-1 flex-shrink-0" />
-                      <div>
-                        <p className="text-white/90 font-medium">
-                          California Graduate University
-                        </p>
-                        <p className="text-white/70">
-                          Engineering Building, Room 201
-                        </p>
-                        <p className="text-white/70">
-                          123 University Ave, CA 90210
-                        </p>
+          {/* RIGHT COLUMN */}
+          <div className="space-y-8">
+            {/* Office Hours */}
+            <Card className="bg-white/5 backdrop-blur-sm border-white/20">
+              <CardHeader>
+                <CardTitle className="text-white font-bold">
+                  <Clock className="w-6 h-6 text-brand-orange mr-3 inline" />
+                  Office Hours
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-3">
+                  {officeHours.map((schedule, index) => (
+                    <div
+                      key={index}
+                      className="flex justify-between items-center py-2 border-b border-white/10 last:border-b-0"
+                    >
+                      <span className="text-white/90 font-medium">
+                        {schedule.day}
+                      </span>
+                      <span className="text-brand-orange font-medium">
+                        {schedule.hours}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Meeting Schedule */}
+            <Card className="bg-white/5 backdrop-blur-sm border-white/20">
+              <CardHeader>
+                <CardTitle className="text-white font-bold">
+                  <Calendar className="w-6 h-6 text-brand-red mr-3 inline" />
+                  Meeting Schedule
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-3">
+                  {meetingTimes.map((meeting, index) => (
+                    <div
+                      key={index}
+                      className="py-2 border-b border-white/10 last:border-b-0"
+                    >
+                      <div className="text-white/90 font-medium mb-1">
+                        {meeting.event}
+                      </div>
+                      <div className="text-brand-red text-sm">
+                        {meeting.time}
                       </div>
                     </div>
-                  </div>
-                </CardContent>
-              </Card>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
 
-              {/* Social Media */}
-              <Card className="bg-white/5 backdrop-blur-sm border-white/20">
-                <CardHeader>
-                  <CardTitle className="text-white font-bold">
-                    <Globe className="w-6 h-6 text-brand-orange mr-3 inline" />
-                    Follow Us
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex space-x-4">
-                    {socialLinks.map((social, index) => (
-                      <button
-                        key={index}
-                        className="w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-all duration-300 hover:scale-110"
-                      >
-                        <social.icon className="w-5 h-5 text-white hover:text-brand-orange" />
-                      </button>
-                    ))}
+            {/* Location */}
+            <Card className="bg-white/5 backdrop-blur-sm border-white/20">
+              <CardHeader>
+                <CardTitle className="text-white font-bold">
+                  <Navigation2 className="w-6 h-6 text-brand-light-orange mr-3 inline" />
+                  Our Location
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="flex items-start space-x-3">
+                  <MapPin className="w-5 h-5 text-brand-light-orange mt-1" />
+                  <div>
+                    <p className="text-white/90 font-medium">
+                      CV Raman Global University
+                    </p>
+                    <p className="text-white/70">Bidya Nagar,Mahura,Janla</p>
+                    <p className="text-white/70">Bhubaneswar -752054</p>
                   </div>
-                  <p className="text-white/70 text-sm mt-4">
-                    Stay connected with our latest updates, project highlights,
-                    and space exploration news.
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>

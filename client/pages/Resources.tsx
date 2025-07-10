@@ -19,13 +19,6 @@ import {
 } from "lucide-react";
 
 export default function Resources() {
-  const stats = [
-    { number: "200+", label: "Resources Available", icon: BookOpen },
-    { number: "50+", label: "Video Tutorials", icon: Video },
-    { number: "25+", label: "Software Tools", icon: Download },
-    { number: "1000+", label: "Downloads", icon: TrendingUp },
-  ];
-
   const resourceCategories = [
     {
       title: "Study Materials",
@@ -146,8 +139,8 @@ export default function Resources() {
       <section className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.pexels.com/photos/32751979/pexels-photo-32751979.jpeg"
-            alt="Women reading books in a modern library"
+            src="./solar.jpg"
+            alt="Solar system with planets and stars"
             className="w-full h-full object-cover scale-110"
           />
           <div className="absolute inset-0 bg-black/60" />
@@ -155,11 +148,11 @@ export default function Resources() {
         </div>
 
         {/* Animated background elements */}
-        <div className="absolute inset-0 z-0">
+        {/* <div className="absolute inset-0 z-0">
           <div className="absolute top-20 left-10 w-2 h-2 bg-brand-orange rounded-full animate-pulse"></div>
           <div className="absolute top-40 right-20 w-3 h-3 bg-brand-red rounded-full animate-bounce"></div>
           <div className="absolute bottom-30 left-1/4 w-1 h-1 bg-brand-light-orange rounded-full animate-ping"></div>
-        </div>
+        </div> */}
 
         <div className="relative z-10 max-w-7xl mx-auto">
           <div className="text-center mb-16">
@@ -171,25 +164,23 @@ export default function Resources() {
               your journey in space science and aerospace engineering.
             </p>
           </div>
-
-          {/* Stats Section */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
-            {stats.map((stat, index) => (
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              { label: "200+ Resources Available", icon: BookOpen },
+              { label: "50+ Video Tutorials", icon: Video },
+              { label: "25+ Software Tools", icon: Download },
+              { label: "1000+ Downloads", icon: TrendingUp },
+            ].map((stat, index) => (
               <div
                 key={index}
-                className="bg-black/40 backdrop-blur-sm border border-white/20 rounded-xl p-6 text-center hover:border-brand-orange/50 transition-all duration-300 hover:scale-105"
+                className="bg-black/40 backdrop-blur-sm border border-white/20 rounded-lg p-6 flex items-center space-x-4 hover:bg-black/50 transition-colors duration-300"
               >
-                <stat.icon className="w-8 h-8 text-brand-orange mx-auto mb-3" />
-                <div className="text-3xl font-bold text-white mb-1">
-                  {stat.number}
-                </div>
-                <div className="text-white/70 text-sm font-medium">
-                  {stat.label}
-                </div>
+                <stat.icon className="w-8 h-8 text-brand-orange" />
+                <span className="text-white font-semibold">{stat.label}</span>
               </div>
             ))}
           </div>
-        </div>
       </section>
 
       {/* Resource Categories */}

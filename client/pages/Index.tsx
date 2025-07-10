@@ -52,12 +52,12 @@ export default function Index() {
 
       {/* Section 2: Live Projects & Upcoming - Split Layout */}
       <section className="relative py-20 px-4 sm:px-6 lg:px-8 bg-black">
-        <div className="absolute inset-0 z-0">
+        {/* <div className="absolute inset-0 z-0">
           <div className="absolute top-20 left-10 w-2 h-2 bg-brand-orange rounded-full animate-pulse"></div>
           <div className="absolute top-40 right-20 w-3 h-3 bg-brand-red rounded-full animate-bounce"></div>
           <div className="absolute bottom-30 left-1/4 w-1 h-1 bg-brand-light-orange rounded-full animate-ping"></div>
           <div className="absolute top-60 left-3/4 w-2 h-2 bg-brand-orange rounded-full animate-pulse"></div>
-        </div>
+        </div> */}
         <div className="relative z-10 max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="font-display text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-brand-orange to-brand-red bg-clip-text text-transparent drop-shadow-lg">
@@ -84,6 +84,12 @@ export default function Index() {
                   </span>
                 </div>
                 <div className="w-full h-64 mb-6 rounded-xl overflow-hidden relative group">
+                  {/* Background image with zoom on hover */}
+                  <img
+                    src="https://images.pexels.com/photos/2166/flight-sky-earth-space.jpg"
+                    alt="NASA space shuttle launching with fiery liftoff"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
                   <div className="w-full h-full bg-black group-hover:scale-110 transition-transform duration-500"></div>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                   <div className="absolute bottom-4 left-4">
@@ -301,6 +307,16 @@ export default function Index() {
         id="get-involved"
         className="relative py-20 px-4 sm:px-6 lg:px-8 bg-black"
       >
+      {/* Background Image */}
+        <div className="absolute inset-0 z-0 h-full w-full overflow-hidden">
+          <img
+            src="/earth1.jpg"
+            alt="Two astronauts in silver spacesuits collaborating in space environment"
+            className="w-full h-full object-cover scale-110"
+          />
+          <div className="absolute inset-0 bg-black/30" />
+          <div className="absolute inset-0 from-brand-orange/10 to-brand-red/10" />
+        </div>
         <div className="relative z-10 max-w-4xl mx-auto text-center">
           <h2 className="font-display text-4xl md:text-5xl font-bold mb-8 bg-gradient-to-r from-brand-orange to-brand-red bg-clip-text text-transparent">
             Get Involved

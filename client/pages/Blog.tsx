@@ -21,12 +21,6 @@ import {
 } from "lucide-react";
 
 export default function Blog() {
-  const stats = [
-    { number: "150+", label: "Articles Published", icon: BookOpen },
-    { number: "25K+", label: "Monthly Readers", icon: Eye },
-    { number: "500+", label: "Community Members", icon: User },
-    { number: "4.8", label: "Average Rating", icon: Star },
-  ];
 
   const categories = [
     { name: "Rocket Science", count: 45, color: "orange" },
@@ -121,8 +115,8 @@ export default function Blog() {
       <section className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg"
-            alt="Professional workspace with modern technology"
+            src="https://images.pexels.com/photos/586061/pexels-photo-586061.png"
+            alt="Rocket launch into dramatic evening sky"
             className="w-full h-full object-cover scale-110"
           />
           <div className="absolute inset-0 bg-black/65" />
@@ -130,11 +124,11 @@ export default function Blog() {
         </div>
 
         {/* Animated background elements */}
-        <div className="absolute inset-0 z-0">
+        {/* <div className="absolute inset-0 z-0">
           <div className="absolute top-20 left-10 w-2 h-2 bg-brand-orange rounded-full animate-pulse"></div>
           <div className="absolute top-40 right-20 w-3 h-3 bg-brand-red rounded-full animate-bounce"></div>
           <div className="absolute bottom-30 left-1/4 w-1 h-1 bg-brand-light-orange rounded-full animate-ping"></div>
-        </div>
+        </div> */}
 
         <div className="relative z-10 max-w-7xl mx-auto">
           <div className="text-center mb-16">
@@ -147,20 +141,19 @@ export default function Blog() {
             </p>
           </div>
 
-          {/* Stats Section */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
-            {stats.map((stat, index) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              { icon: BookOpen, label: "150+ Articles Published" },
+              { icon: Eye, label: "25K+ Monthly Readers" },
+              { icon: User, label: "500+ Community Members" },
+              { icon: Star, label: "4.8 Average Rating" },
+            ].map((stat, index) => (
               <div
                 key={index}
-                className="bg-black/40 backdrop-blur-sm border border-white/20 rounded-xl p-6 text-center hover:border-brand-orange/50 transition-all duration-300 hover:scale-105"
+                className="bg-black/40 backdrop-blur-sm border border-white/20 rounded-lg p-6 flex items-center space-x-4 hover:bg-black/50 transition-colors duration-300"
               >
-                <stat.icon className="w-8 h-8 text-brand-orange mx-auto mb-3" />
-                <div className="text-3xl font-bold text-white mb-1">
-                  {stat.number}
-                </div>
-                <div className="text-white/70 text-sm font-medium">
-                  {stat.label}
-                </div>
+                <stat.icon className="w-8 h-8 text-brand-orange" />
+                <span className="text-white font-semibold">{stat.label}</span>
               </div>
             ))}
           </div>
