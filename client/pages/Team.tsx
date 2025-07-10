@@ -18,78 +18,143 @@ export default function Team() {
   const teamMembers = [
     {
       id: 1,
-      name: "Dr. Sarah Chen",
-      role: "President & Founder",
+      name: "Dr. Smita Rani Parija",
+      role: "Co-Ordinator", //was confused for it and the id2 to be put here or somewhere else. and their roles.
       image:
         "https://images.pexels.com/photos/3862126/pexels-photo-3862126.jpeg",
       description:
-        "Leading our space exploration initiatives with 10+ years in aerospace engineering. PhD in Astrophysics from MIT.",
+        "Leading our space exploration initiatives fueling the creativity and ideas. Asso. Proffesor and President at ECE Department in CGU.",
       color: "orange",
       achievements: ["NASA Internship", "3 Published Papers", "AIAA Award"],
     },
     {
       id: 2,
-      name: "Alex Rodriguez",
-      role: "Vice President",
+      name: "Dr. Soumya Mishra",
+      role: "Co-Ordinator",
       image:
         "https://images.pexels.com/photos/5255354/pexels-photo-5255354.jpeg",
       description:
-        "Managing club operations and coordinating with industry partners. Specializes in rocket propulsion systems.",
+        "Managing club operations and coordinating with our students to help them achieve their goal. Asso. Proffessor and Custodian at Ece Department.",
       color: "red",
       achievements: ["SpaceX Internship", "Rocketry Champion", "IEEE Member"],
     },
     {
       id: 3,
-      name: "Dr. Maya Patel",
-      role: "Research Director",
+      name: "Debadutta Sahoo", //the student member lists start from here.
+      role: "Student President",
       image:
         "https://images.pexels.com/photos/8851493/pexels-photo-8851493.jpeg",
       description:
-        "Leading our research initiatives in space technology and materials science. Former NASA researcher.",
+        "Leading our research initiatives in space technology and materials science.",
       color: "light-orange",
       achievements: ["NASA Researcher", "5 Patents", "Space Grant"],
     },
     {
       id: 4,
-      name: "Marcus Thompson",
-      role: "Technical Lead",
+      name: "Rahul Kumar Gupta",
+      role: "Student Vice-President",
       image:
         "https://images.pexels.com/photos/8960993/pexels-photo-8960993.jpeg",
       description:
-        "Overseeing rocket development and engineering projects. Expert in CAD design and manufacturing.",
+        "Overseeing Satellite development and projects, to turn the ideas of us students into reality.",
       color: "orange",
       achievements: ["Blue Origin Intern", "CAD Expert", "Design Award"],
     },
     {
       id: 5,
-      name: "Dr. Amara Johnson",
-      role: "Safety Director",
+      name: "Debankur Pal",
+      role: "Student Secretary",
       image:
         "https://images.pexels.com/photos/8515116/pexels-photo-8515116.jpeg",
       description:
-        "Ensuring all projects meet safety standards. PhD in Aerospace Safety Engineering.",
+        "Ensuring all projects is being handeled effeciently and effectively, while handeling the communication within the team",
       color: "red",
       achievements: ["Safety Certified", "OSHA Trainer", "Risk Assessment"],
     },
     {
       id: 6,
-      name: "David Kim",
-      role: "Communications Lead",
+      name: "Aditi Singh",
+      role: "Student Tresurer",
       image:
         "https://images.pexels.com/photos/3862126/pexels-photo-3862126.jpeg",
       description:
-        "Managing outreach programs and social media. Expert in science communication and public relations.",
+        "Creating and Overseeing budgets and possible fun raisers, to be able bring the project to light and giving it a physical form.",
       color: "light-orange",
+      achievements: ["PR Specialist", "TEDx Speaker", "Media Relations"],
+    },
+    {
+      id: 7,
+      name: "Nilkamal Ghosh",
+      role: "Student Volunteer",
+      image:
+        "https://images.pexels.com/photos/3862126/pexels-photo-3862126.jpeg",
+      description:
+        "Helping the team in transitioning the ideas into perspective, to help the technological world",
+      color: "orange",
+      achievements: ["PR Specialist", "TEDx Speaker", "Media Relations"],
+    },
+    {
+      id: 8,
+      name: "Asmita Agarwal",
+      role: "Student Volunteer",
+      image:
+        "https://images.pexels.com/photos/3862126/pexels-photo-3862126.jpeg",
+      description:
+        "Helping the team in transitioning the ideas into perspective, to help the technological world",
+      color: "red",
+      achievements: ["PR Specialist", "TEDx Speaker", "Media Relations"],
+    },
+    {
+      id: 9,
+      name: "Smita Nayak",
+      role: "Student Volunteer",
+      image:
+        "https://images.pexels.com/photos/3862126/pexels-photo-3862126.jpeg",
+      description:
+        "Helping the team in transitioning the ideas into perspective, to help the technological world",
+      color: "light-orange",
+      achievements: ["PR Specialist", "TEDx Speaker", "Media Relations"],
+    },
+    {
+      id: 10,
+      name: "Nitish Giri",
+      role: "Student Volunteer",
+      image:
+        "https://images.pexels.com/photos/3862126/pexels-photo-3862126.jpeg",
+      description:
+        "Helping the team in transitioning the ideas into perspective, to help the technological world",
+      color: "orange",
+      achievements: ["PR Specialist", "TEDx Speaker", "Media Relations"],
+    },
+    {
+      id: 11,
+      name: "Priyan Acharya",
+      role: "Student Volunteer",
+      image:
+        "https://images.pexels.com/photos/3862126/pexels-photo-3862126.jpeg",
+      description:
+        "Helping the team in transitioning the ideas into perspective, to help the technological world",
+      color: "red",
+      achievements: ["PR Specialist", "TEDx Speaker", "Media Relations"],
+    },
+    {
+      id: 12,
+      name: "Ramakanta Senapati",
+      role: "Student Volunteer",
+      image:
+        "https://images.pexels.com/photos/3862126/pexels-photo-3862126.jpeg",
+      description:
+        "Helping the team in transitioning the ideas into perspective, to help the technological world",
       achievements: ["PR Specialist", "TEDx Speaker", "Media Relations"],
     },
   ];
 
-  const stats = [
-    { number: "50+", label: "Active Members", icon: Users },
-    { number: "15", label: "Ongoing Projects", icon: Target },
-    { number: "8", label: "Successful Launches", icon: Zap },
-    { number: "3", label: "Years Active", icon: Calendar },
-  ];
+  // const stats = [
+  //   { number: "50+", label: "Active Members", icon: Users },
+  //   { number: "15", label: "Ongoing Projects", icon: Target },
+  //   { number: "8", label: "Successful Launches", icon: Zap },
+  //   { number: "3", label: "Years Active", icon: Calendar },
+  // ];
 
   const getColorClasses = (color: string) => {
     switch (color) {
@@ -134,21 +199,21 @@ export default function Team() {
       <Navigation />
 
       {/* Hero Section with Background */}
-      <section className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <section className="relative py-20 sm:px-6 lg:px-8 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src="/HeroImage1.jpg"
+            src="/HeroImage3c.jpg" //the background image at the top.
             alt="Diverse scientists working together in modern laboratory"
-            className="w-full h-full object-cover scale-110"
+            className="w-full h-full object-cover scale-100"
           />
           <div className="absolute inset-0 bg-black/50" />
           <div className="absolute inset-0 bg-gradient-to-r from-brand-orange/3 to-brand-red/3" />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center "> {/* removed mb-16 */}
             <h1 className="font-display text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-brand-orange to-brand-red bg-clip-text text-transparent drop-shadow-lg">
-              Meet Our Team
+              {/* Meet Our Team */}Leadership Team
             </h1>
             <p className="text-xl text-white/90 max-w-3xl mx-auto font-medium leading-relaxed">
               The passionate individuals driving our mission to explore space
@@ -157,7 +222,7 @@ export default function Team() {
           </div>
 
           {/* Stats Section */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20">
+          {/* <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20">
             {stats.map((stat, index) => (
               <div
                 key={index}
@@ -172,21 +237,21 @@ export default function Team() {
                 </div>
               </div>
             ))}
-          </div>
+          </div> */}
         </div>
       </section>
 
       {/* Team Members Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black/50 to-black">
+      <section className="py-10 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black/50 to-black" >
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
+          {/* <div className="text-center mb-16"> //**the old Leadership title that was right beloe the picture.**
             <h2 className="font-display text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-brand-orange to-brand-red bg-clip-text text-transparent">
               Leadership Team
             </h2>
             <p className="text-lg text-white/80 max-w-2xl mx-auto font-medium">
               Meet the experts leading our space exploration initiatives
             </p>
-          </div>
+          </div> */}
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {teamMembers.map((member) => {
@@ -218,12 +283,12 @@ export default function Team() {
                       {member.role}
                     </p>
                   </CardHeader>
-                  <CardContent className="px-6 pb-6">
+                  {/* <CardContent className="px-6 pb-6">
                     <p className="text-white/80 text-sm mb-4 font-normal leading-relaxed">
                       {member.description}
                     </p>
 
-                    {/* Achievements */}
+                    
                     <div className="mb-4">
                       <h4 className="text-white font-medium text-xs mb-2 uppercase tracking-wide">
                         Achievements
@@ -240,7 +305,7 @@ export default function Team() {
                       </div>
                     </div>
 
-                    {/* Social Links */}
+                    
                     <div className="flex justify-center space-x-4 pt-4 border-t border-white/10">
                       <Github
                         className={`w-5 h-5 text-white/60 ${colors.hover} cursor-pointer transition-colors`}
@@ -252,7 +317,7 @@ export default function Team() {
                         className={`w-5 h-5 text-white/60 ${colors.hover} cursor-pointer transition-colors`}
                       />
                     </div>
-                  </CardContent>
+                  </CardContent> */}
                 </Card>
               );
             })}
@@ -310,21 +375,21 @@ export default function Team() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img
-            src="/HeroImage2.jpg"
-            alt="Two astronauts collaborating on Mars-like landscape"
-            className="w-full h-full object-cover scale-110"
+            src="/earth.jpg"
+            alt="planet surface"
+            className="w-full h-full object-cover scale-100"
           />
           <div className="absolute inset-0 bg-black/45" />
           <div className="absolute inset-0 bg-gradient-to-r from-brand-orange/4 via-brand-red/3 to-brand-orange/4" />
         </div>
 
-        {/* Animated background elements */}
+        {/* Animated background elements
         <div className="absolute inset-0 z-0">
           <div className="absolute top-20 left-10 w-2 h-2 bg-brand-orange rounded-full animate-pulse"></div>
           <div className="absolute top-40 right-20 w-3 h-3 bg-brand-red rounded-full animate-bounce"></div>
           <div className="absolute bottom-30 left-1/4 w-1 h-1 bg-brand-light-orange rounded-full animate-ping"></div>
           <div className="absolute top-60 left-3/4 w-2 h-2 bg-brand-orange rounded-full animate-pulse"></div>
-        </div>
+        </div> */}
 
         <div className="relative z-10 max-w-4xl mx-auto text-center">
           <div className="mb-12">
@@ -338,7 +403,7 @@ export default function Team() {
             </p>
           </div>
 
-          {/* Benefits Grid */}
+          {/* Benefits Grid
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
             <div className="bg-black/40 border border-white/20 rounded-xl p-6 hover:border-brand-orange/50 transition-all duration-300 hover:scale-105">
               <Award className="w-12 h-12 text-brand-orange mx-auto mb-4" />
@@ -365,7 +430,7 @@ export default function Team() {
                 Work on real projects that advance space exploration
               </p>
             </div>
-          </div>
+          </div> */}
 
           {/* Application Process */}
           <div className="bg-black/30 border border-white/20 rounded-2xl p-8 mb-8">

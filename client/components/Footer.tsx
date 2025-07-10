@@ -29,8 +29,11 @@ const Footer = () => {
             </div>
 
             <p className="text-white/70 mb-4 max-w-md">
-              Exploring the cosmos, pushing boundaries, and inspiring the next
-              generation of space explorers at C.V. Raman Global University.
+             CV Raman Global University,
+              <br />
+             Bidya Nagar,Mahura,Janla,
+              <br />
+             Bhubaneswar -752054
             </p>
 
             <div className="flex space-x-4">

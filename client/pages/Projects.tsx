@@ -170,7 +170,7 @@ export default function Projects() {
             {stats.map((stat, index) => (
               <div
                 key={index}
-                className="bg-black/40 backdrop-blur-sm border border-white/20 rounded-xl p-6 text-center hover:border-brand-orange/50 transition-all duration-300 hover:scale-105"
+                className="bg-black/40  border border-white/20 rounded-xl p-6 text-center hover:border-brand-orange/50 transition-all duration-300 hover:scale-105"
               >
                 <stat.icon className="w-8 h-8 text-brand-orange mx-auto mb-3" />
                 <div className="text-3xl font-bold text-white mb-1">
