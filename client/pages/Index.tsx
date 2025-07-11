@@ -52,13 +52,13 @@ export default function Index() {
 
       {/* Section 2: Live Projects & Upcoming - Split Layout */}
       <section className="relative py-20 px-4 sm:px-6 lg:px-8 bg-black">
-        {/* <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 z-0">
           <div className="absolute top-20 left-10 w-2 h-2 bg-brand-orange rounded-full animate-pulse"></div>
           <div className="absolute top-40 right-20 w-3 h-3 bg-brand-red rounded-full animate-bounce"></div>
           <div className="absolute bottom-30 left-1/4 w-1 h-1 bg-brand-light-orange rounded-full animate-ping"></div>
           <div className="absolute top-60 left-3/4 w-2 h-2 bg-brand-orange rounded-full animate-pulse"></div>
-        </div> */}
-        <div className="relative z-10 max-w-7xl mx-auto">
+        </div> 
+        <div className="relative z-10 max-w-7x2 mx-auto">
           <div className="text-center mb-16">
             <h2 className="font-display text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-brand-orange to-brand-red bg-clip-text text-transparent drop-shadow-lg">
               Active Projects
@@ -68,28 +68,36 @@ export default function Index() {
               mission to explore space
             </p>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <div className="relative">
+          <div className="grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-12">
+            <div className="relative w-120"> {/*The left box*/}
               <div className="absolute inset-0 bg-gradient-to-r from-brand-orange/15 to-brand-red/15 blur-2xl animate-pulse"></div>
               <div className="relative bg-black/70 backdrop-blur-md border border-brand-orange/50 rounded-2xl p-8 shadow-2xl hover:shadow-brand-orange/30 transition-all duration-500">
-                <div className="flex items-center justify-between mb-6">
-                  <div className="flex items-center">
-                    <div className="w-4 h-4 bg-green-400 rounded-full animate-pulse mr-3"></div>
-                    <span className="text-green-400 font-bold text-lg">
-                      LIVE PROJECT
+                <div className="relative w-full h-70 mb-4 rounded-xl overflow-hidden">
+                  <img
+                    src="/haps.png"
+                    alt="The main picture for the Haps active project"
+                    className="w-full h-[280px] object-cover rounded-xl"
+                  />
+                  
+                  {/* Black gradient overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-transparent rounded-xl"></div>
+
+                  {/* Top text overlay */}
+                  <div className="absolute top-4 left-4 right-4 flex items-center justify-between z-10">
+                    <div className="flex items-center">
+                      <div className="w-4 h-4 bg-green-400 rounded-full animate-pulse mr-2"></div>
+                      <span className="text-green-400 font-bold text-sm sm:text-base">
+                        LIVE PROJECT
+                      </span>
+                    </div>
+                    <span className="px-3 py-1 bg-brand-orange/30 text-brand-orange text-xs sm:text-sm rounded-full font-medium">
+                      75% Complete
                     </span>
                   </div>
-                  <span className="px-3 py-1 bg-brand-orange/20 text-brand-orange text-sm rounded-full font-medium">
-                    75% Complete
-                  </span>
-                </div>
-                <div className="w-full h-64 mb-6 rounded-xl overflow-hidden relative group">
-                  {/* Background image with zoom on hover */}
-                  <img
-                    src="https://images.pexels.com/photos/2166/flight-sky-earth-space.jpg"
-                    alt="NASA space shuttle launching with fiery liftoff"
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
+              </div>
+
+
+                <div className="w-full mb-4 rounded-xl overflow-hidden relative group">
                   <div className="w-full h-full bg-black group-hover:scale-110 transition-transform duration-500"></div>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                   <div className="absolute bottom-4 left-4">
@@ -152,7 +160,7 @@ export default function Index() {
                     </div>
                   </div>
                 </div>
-                <div className="grid grid-cols-3 gap-4 mb-6 p-4 bg-black/40 rounded-lg">
+                {/* <div className="grid grid-cols-3 gap-4 mb-6 p-4 bg-black/40 rounded-lg">
                   <div className="text-center">
                     <div className="text-brand-orange text-xl font-bold">
                       15ft
@@ -169,14 +177,14 @@ export default function Index() {
                     </div>
                     <div className="text-white/60 text-xs">Burn Time</div>
                   </div>
-                </div>
+                </div> */}
                 <Button className="w-full bg-gradient-to-r from-brand-orange to-brand-red hover:from-brand-light-orange hover:to-brand-dark-red text-white font-bold py-3">
                   <ExternalLink className="w-4 h-4 mr-2" />
                   View Live Updates
                 </Button>
               </div>
             </div>
-            <div className="relative">
+            <div className="relative"> {/*The right box*/}
               <div className="absolute inset-0 bg-gradient-to-l from-brand-red/15 to-brand-light-orange/15 blur-2xl"></div>
               <div className="relative bg-black/70 backdrop-blur-md border border-brand-red/50 rounded-2xl p-8 shadow-2xl hover:shadow-brand-red/30 transition-all duration-500">
                 <div className="flex items-center justify-between mb-6">
@@ -193,7 +201,7 @@ export default function Index() {
                 <h3 className="text-2xl font-bold text-white mb-6">
                   What's Coming Next
                 </h3>
-                <div className="space-y-6">
+                <div className="space-y-4">
                   <div className="bg-black/40 rounded-xl p-6 border border-white/10 hover:border-brand-red/40 transition-all duration-300 hover:scale-105 group">
                     <div className="flex items-start">
                       <div className="w-16 h-16 bg-gradient-to-r from-brand-red to-brand-light-orange rounded-lg flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
@@ -255,7 +263,7 @@ export default function Index() {
                     </div>
                   </div>
                 </div>
-                <div className="mt-8 p-4 bg-gradient-to-r from-brand-red/20 to-brand-orange/20 rounded-lg">
+                {/* <div className="mt-8 p-4 bg-gradient-to-r from-brand-red/20 to-brand-orange/20 rounded-lg">
                   <h4 className="text-white font-semibold mb-3 text-center">
                     2024 Project Pipeline
                   </h4>
@@ -277,7 +285,7 @@ export default function Index() {
                       <div className="text-white/60 text-xs">Team Members</div>
                     </div>
                   </div>
-                </div>
+                </div> */}
                 <Button
                   variant="outline"
                   className="w-full mt-6 border-white/30 text-white hover:bg-white/10 font-bold py-3"
@@ -307,16 +315,6 @@ export default function Index() {
         id="get-involved"
         className="relative py-20 px-4 sm:px-6 lg:px-8 bg-black"
       >
-      {/* Background Image */}
-        <div className="absolute inset-0 z-0 h-full w-full overflow-hidden">
-          <img
-            src="/earth1.jpg"
-            alt="Two astronauts in silver spacesuits collaborating in space environment"
-            className="w-full h-full object-cover scale-110"
-          />
-          <div className="absolute inset-0 bg-black/30" />
-          <div className="absolute inset-0 from-brand-orange/10 to-brand-red/10" />
-        </div>
         <div className="relative z-10 max-w-4xl mx-auto text-center">
           <h2 className="font-display text-4xl md:text-5xl font-bold mb-8 bg-gradient-to-r from-brand-orange to-brand-red bg-clip-text text-transparent">
             Get Involved
