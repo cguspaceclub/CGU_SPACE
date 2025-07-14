@@ -133,7 +133,7 @@ export default function Blog() {
         <div className="relative z-10 max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h1 className="font-display text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-brand-orange to-brand-red bg-clip-text text-transparent drop-shadow-lg">
-              Space Exploration Blog
+              Blog
             </h1>
             <p className="text-xl text-white/90 max-w-3xl mx-auto font-medium leading-relaxed">
               Stay updated with the latest news, discoveries, and insights from
@@ -141,12 +141,12 @@ export default function Blog() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
             {[
               { icon: BookOpen, label: "150+ Articles Published" },
-              { icon: Eye, label: "25K+ Monthly Readers" },
+              // { icon: Eye, label: "25K+ Monthly Readers" },
               { icon: User, label: "500+ Community Members" },
-              { icon: Star, label: "4.8 Average Rating" },
+              // { icon: Star, label: "4.8 Average Rating" },
             ].map((stat, index) => (
               <div
                 key={index}
@@ -160,8 +160,8 @@ export default function Blog() {
         </div>
       </section>
 
-      {/* Search and Categories */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-black via-brand-gray-900 to-black">
+      {/* Search and Categories 
+       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-black via-brand-gray-900 to-black">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="font-display text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-brand-orange to-brand-red bg-clip-text text-transparent">
@@ -169,7 +169,7 @@ export default function Blog() {
             </h2>
           </div>
 
-          {/* Search Bar */}
+          {/* Search Bar 
           <div className="max-w-2xl mx-auto mb-12">
             <div className="relative">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-white/60 w-5 h-5" />
@@ -186,7 +186,7 @@ export default function Blog() {
             </div>
           </div>
 
-          {/* Categories */}
+          {/* Categories 
           <div className="flex flex-wrap justify-center gap-4 mb-8">
             {categories.map((category, index) => (
               <button
@@ -201,17 +201,17 @@ export default function Blog() {
         </div>
       </section>
 
-      {/* Featured and Recent Posts */}
+       Featured and Recent Posts */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="font-display text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-brand-orange to-brand-red bg-clip-text text-transparent">
               Latest Articles
             </h2>
-            <p className="text-lg text-white/80 max-w-2xl mx-auto font-medium">
+            {/* <p className="text-lg text-white/80 max-w-2xl mx-auto font-medium">
               Discover the latest insights and breakthroughs in space
               exploration
-            </p>
+            </p> */}
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
