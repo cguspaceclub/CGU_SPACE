@@ -2,12 +2,19 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { Home, ArrowLeft } from "lucide-react";
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen bg-black text-white">
-      <Navigation />
+    <>
+      <SEO 
+        title="404 - Page Not Found"
+        description="The page you're looking for doesn't exist. Navigate back to our homepage to explore CGU Space Club."
+        keywords="404, page not found, lost in space"
+      />
+      <div className="min-h-screen bg-black text-white">
+        <Navigation />
 
       <div className="relative z-10 min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
         <div className="text-center">
@@ -45,5 +52,6 @@ export default function NotFound() {
       </div>
       <Footer />
     </div>
+    </>
   );
 }

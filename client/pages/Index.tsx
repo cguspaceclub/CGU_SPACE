@@ -1,9 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Navigation from "@/components/Navigation";
 import SpaceCarousel from "@/components/SpaceCarousel";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import {
   Rocket,
   Users,
@@ -20,8 +22,15 @@ import {
 } from "lucide-react";
 
 export default function Index() {
+  const navigate = useNavigate();
   return (
-    <div className="min-h-screen bg-black text-white font-sans">
+    <>
+      <SEO 
+        title="Home"
+        description="CGU Space Club - Exploring the cosmos, pushing boundaries, and inspiring the next generation of space explorers. Join us in our mission to advance space technology and education."
+        keywords="CGU Space Club, space exploration, rocket science, satellite technology, aerospace engineering, Bhubaneswar, CV Raman Global University, space research, student space club"
+      />
+      <div className="min-h-screen bg-black text-white font-sans">
       {/* Section 1: Main Hero with Navbar and Space Carousel */}
       <div className="relative min-h-screen">
         <SpaceCarousel />
@@ -361,22 +370,30 @@ export default function Index() {
                 Get In Touch
               </Button>
             </Link>
-            <Link to="/sponsorship">
-              <Button
-                variant="outline"
-                size="lg"
-                className="border-white/30 text-white hover:bg-white/10 px-10 py-4 text-lg font-medium"
-              >
-                <Award className="mr-2 h-5 w-5" />
-                Get Involved
-              </Button>
-            </Link>
+            <Button
+              variant="outline"
+              size="lg"
+              className="border-white/30 text-white hover:bg-white/10 px-10 py-4 text-lg font-medium"
+              onClick={() => navigate('/maintenance')}
+            >
+              <Award className="mr-2 h-5 w-5" />
+              Get Involved
+            </Button>
           </div>
         </div>
       </section>
 
-      {/* Section 4: Footer */}
+      {/* Section 4: Newsletter Signup */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-black via-brand-gray-900 to-black">
+        <div className="max-w-4xl mx-auto">
+          <NewsletterSignup />
+        </div>
+      </section>
+
+      {/* Section 5: Footer */}
       <Footer />
     </div>
+    </>
   );
 }
+

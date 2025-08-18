@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   Facebook,
   Twitter,
@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 
 const Footer = () => {
+  const navigate = useNavigate();
   return (
     <footer className="py-8 px-4 sm:px-6 lg:px-8 bg-black/80 backdrop-blur-sm border-t border-white/10">
       <div className="max-w-7xl mx-auto">
@@ -29,7 +30,7 @@ const Footer = () => {
             </div>
 
             <p className="text-sm text-white/70 mb-2 max-w-md">
-             CV Raman Global University,
+             C V Raman Global University,
               <br />
              Bidya Nagar,Mahura,Janla,
               <br />
@@ -121,12 +122,12 @@ const Footer = () => {
                 <span className="text-sm">+91 8908828802, 9798376027</span>
               </li>
               <li className="space-x-9 py-3">
-                <Link
-                  to="/sponsorship"
-                  className="text-brand-orange hover:text-brand-light-orange transition-colors font-medium"
+                <button
+                  onClick={() => navigate('/maintenance')}
+                  className="text-brand-orange hover:text-brand-light-orange transition-colors font-medium cursor-pointer"
                 >
                   Get Involved
-                </Link>
+                </button>
                 
                 <Link
                   to="/contact"

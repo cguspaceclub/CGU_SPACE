@@ -1,5 +1,7 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import {
@@ -17,8 +19,11 @@ import {
   Cpu,
   Globe,
 } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export default function Resources() {
+  const navigate = useNavigate();
+  
   const resourceCategories = [
     {
       title: "Study Materials",
@@ -132,8 +137,21 @@ export default function Resources() {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white font-sans">
-      <Navigation />
+    <>
+      <SEO 
+        title="Learning Resources"
+        description="Access comprehensive learning materials, video tutorials, and software tools for space science and aerospace engineering from CGU Space Club."
+        keywords="space learning resources, aerospace engineering materials, rocket design tutorials, satellite technology guides, space science education"
+      />
+      <div className="min-h-screen bg-black text-white font-sans">
+        <Navigation />
+
+        {/* Breadcrumbs */}
+        <section className="py-8 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <Breadcrumbs />
+          </div>
+        </section>
 
       {/* Hero Section with Background */}
       <section className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
@@ -316,6 +334,7 @@ export default function Resources() {
                       <Button
                         size="sm"
                         className={`flex-1 ${colors.bg} hover:opacity-90 text-white font-medium`}
+                        onClick={() => navigate('/maintenance')}
                       >
                         <Download className="w-4 h-4 mr-2" />
                         Download
@@ -324,6 +343,7 @@ export default function Resources() {
                         variant="outline"
                         size="sm"
                         className="border-white/30 text-white hover:bg-white/10"
+                        onClick={() => navigate('/maintenance')}
                       >
                         <ExternalLink className="w-4 h-4" />
                       </Button>
@@ -347,6 +367,7 @@ export default function Resources() {
               <Button
                 size="lg"
                 className="bg-gradient-to-r from-brand-orange to-brand-red hover:from-brand-light-orange hover:to-brand-dark-red text-white px-8 py-3 font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+                onClick={() => navigate('/maintenance')}
               >
                 <Users className="mr-2 h-5 w-5" />
                 Join Community
@@ -356,7 +377,8 @@ export default function Resources() {
         </div>
       </section>
 
-      <Footer />
-    </div>
-  );
-}
+             <Footer />
+     </div>
+     </>
+   );
+ }

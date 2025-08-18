@@ -1,5 +1,7 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import {
@@ -19,8 +21,11 @@ import {
   Heart,
   Handshake,
 } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export default function Sponsorship() {
+  const navigate = useNavigate();
+  
   const stats = [
     { number: "$500K+", label: "Total Funding Raised", icon: TrendingUp },
     { number: "25+", label: "Corporate Partners", icon: Building2 },
@@ -169,8 +174,21 @@ export default function Sponsorship() {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white font-sans">
-      <Navigation />
+    <>
+      <SEO 
+        title="Sponsorship"
+        description="Partner with CGU Space Club to support innovative space exploration projects and connect with the next generation of aerospace engineers."
+        keywords="space club sponsorship, aerospace partnership, space technology funding, corporate sponsorship, space education support"
+      />
+      <div className="min-h-screen bg-black text-white font-sans">
+        <Navigation />
+
+        {/* Breadcrumbs */}
+        <section className="py-8 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <Breadcrumbs />
+          </div>
+        </section>
 
       {/* Hero Section with Background */}
       <section className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
@@ -303,7 +321,10 @@ export default function Sponsorship() {
                         </li>
                       ))}
                     </ul>
-                    <Button className={`w-full ${colors.button} font-bold`}>
+                    <Button 
+                      className={`w-full ${colors.button} font-bold`}
+                      onClick={() => navigate('/maintenance')}
+                    >
                       Choose {tier.name}
                     </Button>
                   </CardContent>
@@ -383,6 +404,7 @@ export default function Sponsorship() {
               <Button
                 size="lg"
                 className="bg-gradient-to-r from-brand-orange to-brand-red hover:from-brand-light-orange hover:to-brand-dark-red text-white px-12 py-4 text-lg font-bold shadow-2xl hover:shadow-brand-orange/40 transition-all duration-500 hover:scale-110"
+                onClick={() => navigate('/maintenance')}
               >
                 <Mail className="mr-2 h-5 w-5" />
                 Contact Us
@@ -391,6 +413,7 @@ export default function Sponsorship() {
                 variant="outline"
                 size="lg"
                 className="border-white/40 text-white hover:bg-white/15 px-12 py-4 text-lg font-semibold"
+                onClick={() => navigate('/maintenance')}
               >
                 <Download className="mr-2 h-5 w-5" />
                 Download Proposal
@@ -402,5 +425,6 @@ export default function Sponsorship() {
 
       <Footer />
     </div>
+    </>
   );
 }

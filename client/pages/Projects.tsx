@@ -1,5 +1,7 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import {
@@ -16,8 +18,11 @@ import {
   CheckCircle,
   Clock,
 } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export default function Projects() {
+  const navigate = useNavigate();
+  
   const stats = [
     { number: "15", label: "Active Projects", icon: Target },
     { number: "8", label: "Completed Launches", icon: Rocket },
@@ -131,8 +136,21 @@ export default function Projects() {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white font-sans">
-      <Navigation />
+    <>
+      <SEO 
+        title="Projects"
+        description="Explore CGU Space Club's innovative projects including rocket development, satellite technology, and space observation initiatives."
+        keywords="CGU Space Club projects, rocket development, satellite technology, space research, aerospace engineering projects"
+      />
+      <div className="min-h-screen bg-black text-white font-sans">
+        <Navigation />
+
+        {/* Breadcrumbs */}
+        <section className="py-8 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <Breadcrumbs />
+          </div>
+        </section>
 
       {/* Hero Section with Background */}
       <section className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
@@ -307,14 +325,15 @@ export default function Projects() {
                       </div>
                     </div>
 
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      className={`w-full border-white/30 text-white hover:bg-white/10 font-medium`}
-                    >
-                      <ExternalLink className="w-4 h-4 mr-2" />
-                      Learn More
-                    </Button>
+                                         <Button
+                       variant="outline"
+                       size="sm"
+                       className={`w-full border-white/30 text-white hover:bg-white/10 font-medium`}
+                       onClick={() => navigate('/maintenance')}
+                     >
+                       <ExternalLink className="w-4 h-4 mr-2" />
+                       Learn More
+                     </Button>
                   </CardContent>
                 </Card>
               );
@@ -323,18 +342,20 @@ export default function Projects() {
 
           {/* View All Projects CTA */}
           <div className="text-center mt-16">
-            <Button
-              size="lg"
-              className="bg-gradient-to-r from-brand-orange to-brand-red hover:from-brand-light-orange hover:to-brand-dark-red text-white px-12 py-4 text-lg font-bold shadow-2xl hover:shadow-brand-orange/40 transition-all duration-500 hover:scale-110"
-            >
-              <TrendingUp className="mr-2 h-5 w-5" />
-              View All Projects
-            </Button>
+                         <Button
+               size="lg"
+               className="bg-gradient-to-r from-brand-orange to-brand-red hover:from-brand-light-orange hover:to-brand-dark-red text-white px-12 py-4 text-lg font-bold shadow-2xl hover:shadow-brand-orange/40 transition-all duration-500 hover:scale-110"
+               onClick={() => navigate('/maintenance')}
+             >
+               <TrendingUp className="mr-2 h-5 w-5" />
+               View All Projects
+             </Button>
           </div>
         </div>
       </section>
 
-      <Footer />
-    </div>
-  );
-}
+             <Footer />
+     </div>
+     </>
+   );
+ }

@@ -1,5 +1,7 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -19,8 +21,10 @@ import {
   Star,
   Eye,
 } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export default function Blog() {
+  const navigate = useNavigate();
 
   const categories = [
     { name: "Rocket Science", count: 45, color: "orange" },
@@ -108,8 +112,21 @@ export default function Blog() {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white font-sans">
-      <Navigation />
+    <>
+      <SEO 
+        title="Blog"
+        description="Stay updated with the latest space exploration news, research breakthroughs, and educational content from CGU Space Club."
+        keywords="space blog, rocket science news, space exploration updates, aerospace research, space technology blog"
+      />
+      <div className="min-h-screen bg-black text-white font-sans">
+        <Navigation />
+
+        {/* Breadcrumbs */}
+        <section className="py-8 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <Breadcrumbs />
+          </div>
+        </section>
 
       {/* Hero Section with Background */}
       <section className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
@@ -300,6 +317,7 @@ export default function Blog() {
                   <Button
                     variant="outline"
                     className="w-full border-white/30 text-white hover:bg-white/10 font-medium"
+                    onClick={() => navigate('/maintenance')}
                   >
                     Read Article
                     <ArrowRight className="w-4 h-4 ml-2" />
@@ -325,7 +343,10 @@ export default function Blog() {
                   placeholder="Enter your email..."
                   className="bg-white/10 border-white/20 text-white placeholder:text-white/60"
                 />
-                <Button className="bg-gradient-to-r from-brand-orange to-brand-red hover:from-brand-light-orange hover:to-brand-dark-red text-white font-semibold">
+                <Button 
+                  className="bg-gradient-to-r from-brand-orange to-brand-red hover:from-brand-light-orange hover:to-brand-dark-red text-white font-semibold"
+                  onClick={() => navigate('/maintenance')}
+                >
                   Subscribe
                 </Button>
               </div>
@@ -336,5 +357,6 @@ export default function Blog() {
 
       <Footer />
     </div>
+    </>
   );
 }

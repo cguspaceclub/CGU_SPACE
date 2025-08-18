@@ -1,5 +1,7 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -9,18 +11,67 @@ import {
   Mail,
   Phone,
   MapPin,
-  Clock,
   Send,
   Facebook,
   Twitter,
   Instagram,
   Linkedin,
-  Calendar,
   Navigation2,
   Globe,
+  Sparkles,
+  Zap,
+  Star,
+  MessageSquare,
+  User,
+  Calendar,
+  Clock,
+  CheckCircle,
+  ArrowRight,
+  Rocket
 } from "lucide-react";
+import { useState, useEffect } from "react";
 
 export default function Contact() {
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    phone: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [typingText, setTypingText] = useState('');
+  const [currentTextIndex, setCurrentTextIndex] = useState(0);
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
+
+  const typingTexts = [
+    "Ready to explore space together?",
+    "Let's build the future of space technology!",
+    "Join our mission to reach the stars!",
+    "Your ideas can change the universe!"
+  ];
+
+  // Typing animation effect
+  useEffect(() => {
+    const currentText = typingTexts[currentTextIndex];
+    let charIndex = 0;
+    
+    const typingInterval = setInterval(() => {
+      if (charIndex <= currentText.length) {
+        setTypingText(currentText.slice(0, charIndex));
+        charIndex++;
+      } else {
+        setTimeout(() => {
+          setCurrentTextIndex((prev) => (prev + 1) % typingTexts.length);
+        }, 2000);
+        clearInterval(typingInterval);
+      }
+    }, 100);
+
+    return () => clearInterval(typingInterval);
+  }, [currentTextIndex]);
+
   const contactMethods = [
     {
       icon: Mail,
@@ -28,6 +79,7 @@ export default function Contact() {
       primary: "spacesystems@cgu-odisha.ac.in",
       description: "Get in touch via email for general inquiries",
       color: "orange",
+      action: () => window.location.href = "mailto:spacesystems@cgu-odisha.ac.in"
     },
     {
       icon: Phone,
@@ -36,6 +88,7 @@ export default function Contact() {
       secondary: "+91 9798376027",
       description: "Speak directly with our team members",
       color: "red",
+      action: () => window.location.href = "tel:+918908828802"
     },
     {
       icon: MapPin,
@@ -44,20 +97,8 @@ export default function Contact() {
       secondary: "Bidya Nagar,Mahura,Janla,Bhubaneswar -752054",
       description: "Come see our facilities and meet the team",
       color: "light-orange",
+      action: () => window.open("https://maps.google.com/?q=CV+Raman+Global+University+Bhubaneswar", "_blank")
     },
-  ];
-
-  const officeHours = [
-    { day: "Monday - Friday", hours: "9:30 AM - 5:30 PM" },
-    { day: "Saturday", hours: "10:00 AM - 2:00 PM" },
-    { day: "Sunday", hours: "Closed" },
-  ];
-
-  const meetingTimes = [
-    { event: "General Meetings", time: "Tuesdays: 6:00 PM - 8:00 PM" },
-    { event: "Project Sessions", time: "Fridays: 4:00 PM - 6:00 PM" },
-    { event: "Workshop Days", time: "Saturdays: 10:00 AM - 4:00 PM" },
-    { event: "Special Events", time: "By announcement" },
   ];
 
   const socialLinks = [
@@ -92,7 +133,7 @@ export default function Contact() {
       case "red":
         return {
           icon: "text-brand-red",
-          border: "border-brand-red/30 hover:border-brand-red/60",
+          border: "border-brand-red/30 hover:border-red/60",
           shadow: "hover:shadow-brand-red/20",
         };
       case "light-orange":
@@ -111,17 +152,89 @@ export default function Contact() {
     }
   };
 
+  const handleInputChange = (field: string, value: string) => {
+    setFormData(prev => ({ ...prev, [field]: value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    // Simulate form submission
+    await new Promise(resolve => setTimeout(resolve, 2000));
+    
+    // Show success message
+    alert("Message sent successfully! We'll get back to you soon.");
+    setFormData({
+      firstName: '',
+      lastName: '',
+      phone: '',
+      email: '',
+      subject: '',
+      message: ''
+    });
+    setIsSubmitting(false);
+  };
+
   return (
-    <div className="min-h-screen bg-black text-white font-sans">
+    <>
+      <SEO 
+        title="Contact Us"
+        description="Get in touch with CGU Space Club. Contact us for collaborations, sponsorships, or to learn more about our space exploration projects and initiatives."
+        keywords="contact CGU Space Club, space club contact, collaboration, sponsorship, space projects, Bhubaneswar space club"
+      />
+      <div className="min-h-screen bg-black text-white font-sans relative overflow-hidden">
+      {/* Floating Elements Background */}
+      <div className="absolute inset-0 pointer-events-none">
+        {[...Array(15)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute w-1 h-1 bg-brand-orange/30 rounded-full animate-pulse"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 3}s`,
+              animationDuration: `${2 + Math.random() * 3}s`
+            }}
+          />
+        ))}
+                 {[...Array(8)].map((_, i) => (
+           <div
+             key={`star-${i}`}
+             className="absolute w-2 h-2 bg-brand-orange/20 rounded-full animate-bounce"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 2}s`,
+              animationDuration: `${1 + Math.random() * 2}s`
+            }}
+          />
+        ))}
+      </div>
+
       <Navigation />
+
+      {/* Breadcrumbs */}
+      <section className="py-8 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <Breadcrumbs />
+        </div>
+      </section>
 
       {/* Contact Methods */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-black via-brand-gray-900 to-black">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="font-display text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-brand-orange to-brand-red bg-clip-text text-transparent">
+                         <h2 className="font-display text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-brand-orange to-brand-orange bg-clip-text text-transparent">
               How to Reach Us
             </h2>
+            {/* Typing Animation */}
+            <div className="h-8 mb-4">
+              <span className="text-xl text-brand-orange font-medium">
+                {typingText}
+                <span className="animate-pulse">|</span>
+              </span>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -130,12 +243,23 @@ export default function Contact() {
               return (
                 <Card
                   key={index}
-                  className={`bg-white/5 backdrop-blur-sm ${colors.border} hover:bg-white/10 transition-all duration-300 hover:scale-105 ${colors.shadow}`}
+                  className={`bg-white/5 backdrop-blur-sm ${colors.border} hover:bg-white/10 transition-all duration-300 hover:scale-105 ${colors.shadow} group cursor-pointer relative overflow-hidden`}
+                  onMouseEnter={() => setHoveredCard(index)}
+                  onMouseLeave={() => setHoveredCard(null)}
+                  onClick={method.action}
                 >
-                  <CardHeader className="text-center">
-                    <method.icon
-                      className={`w-12 h-12 ${colors.icon} mx-auto mb-4`}
-                    />
+                  {/* Animated background effect */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+                  
+                  <CardHeader className="text-center relative z-10">
+                    <div className="relative">
+                      <method.icon
+                        className={`w-12 h-12 ${colors.icon} mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}
+                      />
+                      {hoveredCard === index && (
+                        <Sparkles className="w-6 h-6 text-brand-orange absolute -top-1 -right-1 animate-ping" />
+                      )}
+                    </div>
                     <CardTitle className="text-white font-bold mb-2">
                       {method.title}
                     </CardTitle>
@@ -143,9 +267,11 @@ export default function Contact() {
                       {method.description}
                     </p>
                   </CardHeader>
-                  <CardContent className="text-center">
+                  <CardContent className="text-center relative z-10">
                     <div className="space-y-2">
-                      <p className="text-white font-medium">{method.primary}</p>
+                      <p className="text-white font-medium group-hover:text-brand-orange transition-colors duration-300">
+                        {method.primary}
+                      </p>
                       <p className="text-white/80 text-sm">
                         {method.secondary}
                       </p>
@@ -160,97 +286,137 @@ export default function Contact() {
 
       {/* Contact Form and Info */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* LEFT COLUMN */}
-          <div className="space-y-8">
-            {/* Contact Form */}
-            <Card className="bg-white/5 backdrop-blur-sm border-white/20">
+        <div className="max-w-7xl mx-auto">
+          {/* Contact Form - Full Width */}
+          <div className="mb-12">
+            <Card className="bg-white/5 backdrop-blur-sm border-white/20 max-w-4xl mx-auto relative overflow-hidden">
+                             {/* Animated border effect */}
+               <div className="absolute inset-0 bg-gradient-to-r from-brand-orange/20 via-brand-orange/20 to-brand-orange/20 rounded-lg opacity-0 hover:opacity-100 transition-opacity duration-500" />
+              
               <CardHeader>
-                <CardTitle className="text-2xl text-white font-bold">
-                  <Send className="w-6 h-6 text-brand-orange mr-3 inline" />
-                  Send us a Message
-                </CardTitle>
-                <p className="text-white/70 font-medium">
-                  Fill out the form below and we'll get back to you within 24
-                  hours
+                                 <CardTitle className="text-2xl text-white font-bold relative z-10">
+                   <div className="flex items-center">
+                     <Send className="w-6 h-6 text-brand-orange mr-3 animate-pulse" />
+                     Send us a Message
+                   </div>
+                 </CardTitle>
+                <p className="text-white/70 font-medium relative z-10">
+                  Fill out the form below and we'll get back to you within 24 hours
                 </p>
               </CardHeader>
-              <CardContent className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <Label htmlFor="firstName" className="text-white">
-                      First Name *
+              <CardContent className="space-y-6 relative z-10">
+                <form onSubmit={handleSubmit}>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="group">
+                      <Label htmlFor="firstName" className="text-white group-hover:text-brand-orange transition-colors duration-300">
+                        First Name *
+                      </Label>
+                      <Input
+                        id="firstName"
+                        value={formData.firstName}
+                        onChange={(e) => handleInputChange('firstName', e.target.value)}
+                        placeholder="Enter your first name"
+                        className="bg-white/10 border-white/20 text-white placeholder:text-white/60 focus:border-brand-orange/60 focus:ring-brand-orange/20 transition-all duration-300 group-hover:border-brand-orange/40"
+                        required
+                      />
+                    </div>
+                    <div className="group">
+                      <Label htmlFor="lastName" className="text-white group-hover:text-brand-orange transition-colors duration-300">
+                        Last Name *
+                      </Label>
+                      <Input
+                        id="lastName"
+                        value={formData.lastName}
+                        onChange={(e) => handleInputChange('lastName', e.target.value)}
+                        placeholder="Enter your last name"
+                        className="bg-white/10 border-white/20 text-white placeholder:text-white/60 focus:border-brand-orange/60 focus:ring-brand-orange/20 transition-all duration-300 group-hover:border-brand-orange/40"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div className="group">
+                    <Label htmlFor="phone" className="text-white group-hover:text-brand-orange transition-colors duration-300">
+                      Phone Number *
                     </Label>
                     <Input
-                      id="firstName"
-                      placeholder="firstName"
-                      className="bg-white/10 border-white/20 text-white placeholder:text-white/60"
+                      id="phone"
+                      value={formData.phone}
+                      onChange={(e) => handleInputChange('phone', e.target.value)}
+                      placeholder="+91 "
+                      className="bg-white/10 border-white/20 text-white placeholder:text-white/60 focus:border-brand-orange/60 focus:ring-brand-orange/20 transition-all duration-300 group-hover:border-brand-orange/40"
+                      required
                     />
                   </div>
-                  <div>
-                    <Label htmlFor="lastName" className="text-white">
-                      Last Name *
+                  <div className="group">
+                    <Label htmlFor="email" className="text-white group-hover:text-brand-orange transition-colors duration-300">
+                      Email Address *
                     </Label>
                     <Input
-                      id="lastName"
-                      placeholder="lastname"
-                      className="bg-white/10 border-white/20 text-white placeholder:text-white/60"
+                      id="email"
+                      type="email"
+                      value={formData.email}
+                      onChange={(e) => handleInputChange('email', e.target.value)}
+                      placeholder="your.email@example.com"
+                      className="bg-white/10 border-white/20 text-white placeholder:text-white/60 focus:border-brand-orange/60 focus:ring-brand-orange/20 transition-all duration-300 group-hover:border-brand-orange/40"
+                      required
                     />
                   </div>
-                </div>
-                <div>
-                  <Label htmlFor="phone" className="text-white">
-                    Phone Number *
-                  </Label>
-                  <Input
-                    id="phone"
-                    placeholder="+91 "
-                    className="bg-white/10 border-white/20 text-white placeholder:text-white/60"
-                  />
-                </div>
-                <div>
-                  <Label htmlFor="email" className="text-white">
-                    Email Address *
-                  </Label>
-                  <Input
-                    id="email"
-                    type="email"
-                    placeholder="@example.com"
-                    className="bg-white/10 border-white/20 text-white placeholder:text-white/60"
-                  />
-                </div>
-                <div>
-                  <Label htmlFor="subject" className="text-white">
-                    Subject *
-                  </Label>
-                  <Input
-                    id="subject"
-                    placeholder="How can we help you?"
-                    className="bg-white/10 border-white/20 text-white placeholder:text-white/60"
-                  />
-                </div>
-                <div>
-                  <Label htmlFor="message" className="text-white">
-                    Message *
-                  </Label>
-                  <Textarea
-                    id="message"
-                    placeholder="Tell us more about your inquiry..."
-                    className="bg-white/10 border-white/20 text-white placeholder:text-white/60 min-h-[70px]"
-                  />
-                </div>
-                <Button className="w-full bg-gradient-to-r from-brand-orange to-brand-red hover:from-brand-light-orange hover:to-brand-dark-red text-white font-bold py-3">
-                  <Send className="mr-2 h-4 w-4" />
-                  Send Message
-                </Button>
+                  <div className="group">
+                    <Label htmlFor="subject" className="text-white group-hover:text-brand-orange transition-colors duration-300">
+                      Subject *
+                    </Label>
+                    <Input
+                      id="subject"
+                      value={formData.subject}
+                      onChange={(e) => handleInputChange('subject', e.target.value)}
+                      placeholder="How can we help you?"
+                      className="bg-white/10 border-white/20 text-white placeholder:text-white/60 focus:border-brand-orange/60 focus:ring-brand-orange/20 transition-all duration-300 group-hover:border-brand-orange/40"
+                      required
+                    />
+                  </div>
+                  <div className="group">
+                    <Label htmlFor="message" className="text-white group-hover:text-brand-orange transition-colors duration-300">
+                      Message *
+                    </Label>
+                    <Textarea
+                      id="message"
+                      value={formData.message}
+                      onChange={(e) => handleInputChange('message', e.target.value)}
+                      placeholder="Tell us more about your inquiry..."
+                      className="bg-white/10 border-white/20 text-white placeholder:text-white/60 focus:border-brand-orange/60 focus:ring-brand-orange/20 transition-all duration-300 group-hover:border-brand-orange/40 min-h-[120px] resize-none"
+                      required
+                    />
+                  </div>
+                                     <Button 
+                     type="submit"
+                     disabled={isSubmitting}
+                     className="w-full bg-gradient-to-r from-brand-orange to-brand-orange hover:from-brand-light-orange hover:to-brand-orange text-white font-bold py-3 transform hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                   >
+                    {isSubmitting ? (
+                      <div className="flex items-center">
+                        <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+                        Sending Message...
+                      </div>
+                    ) : (
+                      <div className="flex items-center">
+                        <Send className="mr-2 h-4 w-4" />
+                        Send Message
+                        <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
+                      </div>
+                    )}
+                  </Button>
+                </form>
               </CardContent>
             </Card>
+          </div>
 
+          {/* Additional Info - Two Column Layout */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {/* Follow Us */}
-            <Card className="bg-white/5 backdrop-blur-sm border-white/20">
+            <Card className="bg-white/5 backdrop-blur-sm border-white/20 group hover:border-brand-orange/40 transition-all duration-300">
               <CardHeader>
-                <CardTitle className="text-white font-bold">
-                  <Globe className="w-6 h-6 text-brand-orange mr-3 inline" />
+                <CardTitle className="text-white font-bold flex items-center">
+                  <Globe className="w-6 h-6 text-brand-orange mr-3 group-hover:scale-110 transition-transform duration-300" />
                   Follow Us
                 </CardTitle>
               </CardHeader>
@@ -263,9 +429,9 @@ export default function Contact() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={social.name}
-                      className="w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-all duration-300 hover:scale-110"
+                      className="w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-all duration-300 hover:scale-110 hover:rotate-12 group"
                     >
-                      <social.icon className="w-5 h-5 text-white hover:text-brand-orange" />
+                      <social.icon className="w-5 h-5 text-white group-hover:text-brand-orange transition-colors duration-300" />
                     </a>
                   ))}
                 </div>
@@ -276,77 +442,20 @@ export default function Contact() {
                 </p>
               </CardContent>
             </Card>
-          </div>
-
-          {/* RIGHT COLUMN */}
-          <div className="space-y-8">
-            {/* Office Hours */}
-            <Card className="bg-white/5 backdrop-blur-sm border-white/20">
-              <CardHeader>
-                <CardTitle className="text-white font-bold">
-                  <Clock className="w-6 h-6 text-brand-orange mr-3 inline" />
-                  Office Hours
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-3">
-                  {officeHours.map((schedule, index) => (
-                    <div
-                      key={index}
-                      className="flex justify-between items-center py-2 border-b border-white/10 last:border-b-0"
-                    >
-                      <span className="text-white/90 font-medium">
-                        {schedule.day}
-                      </span>
-                      <span className="text-brand-orange font-medium">
-                        {schedule.hours}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Meeting Schedule */}
-            <Card className="bg-white/5 backdrop-blur-sm border-white/20">
-              <CardHeader>
-                <CardTitle className="text-white font-bold">
-                  <Calendar className="w-6 h-6 text-brand-red mr-3 inline" />
-                  Meeting Schedule
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-3">
-                  {meetingTimes.map((meeting, index) => (
-                    <div
-                      key={index}
-                      className="py-2 border-b border-white/10 last:border-b-0"
-                    >
-                      <div className="text-white/90 font-medium mb-1">
-                        {meeting.event}
-                      </div>
-                      <div className="text-brand-red text-sm">
-                        {meeting.time}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
 
             {/* Location */}
-            <Card className="bg-white/5 backdrop-blur-sm border-white/20">
+            <Card className="bg-white/5 backdrop-blur-sm border-white/20 group hover:border-brand-light-orange/40 transition-all duration-300">
               <CardHeader>
-                <CardTitle className="text-white font-bold">
-                  <Navigation2 className="w-6 h-6 text-brand-light-orange mr-3 inline" />
+                <CardTitle className="text-white font-bold flex items-center">
+                  <Navigation2 className="w-6 h-6 text-brand-light-orange mr-3 group-hover:scale-110 transition-transform duration-300" />
                   Our Location
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="flex items-start space-x-3">
-                  <MapPin className="w-5 h-5 text-brand-light-orange mt-1" />
+                  <MapPin className="w-5 h-5 text-brand-light-orange mt-1 group-hover:scale-110 transition-transform duration-300" />
                   <div>
-                    <p className="text-white/90 font-medium">
+                    <p className="text-white/90 font-medium group-hover:text-brand-light-orange transition-colors duration-300">
                       CV Raman Global University
                     </p>
                     <p className="text-white/70">Bidya Nagar,Mahura,Janla</p>
@@ -361,5 +470,6 @@ export default function Contact() {
 
       <Footer />
     </div>
+    </>
   );
 }

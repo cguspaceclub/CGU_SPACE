@@ -1,11 +1,12 @@
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   const navItems = [
     { name: "Home", path: "/" },
@@ -13,7 +14,7 @@ const Navigation = () => {
     { name: "Projects", path: "/projects" },
     { name: "Resources", path: "/resources" },
     { name: "Blog", path: "/blog" },
-    { name: "Sponsorship", path: "/sponsorship" },
+    { name: "Sponsorship", path: "/sponsorship", redirectToMaintenance: true },
     { name: "Contact", path: "/contact" },
   ];
 
@@ -40,17 +41,31 @@ const Navigation = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
-              <Link
-                key={item.path}
-                to={item.path}
-                className={`text-sm font-medium transition-colors hover:text-brand-orange ${
-                  isActive(item.path)
-                    ? "text-brand-orange border-b-2 border-brand-orange pb-1"
-                    : "text-white/90"
-                }`}
-              >
-                {item.name}
-              </Link>
+              <div key={item.path}>
+                {item.redirectToMaintenance ? (
+                  <button
+                    onClick={() => navigate('/maintenance')}
+                    className={`text-sm font-medium transition-colors hover:text-brand-orange cursor-pointer ${
+                      isActive(item.path)
+                        ? "text-brand-orange border-b-2 border-brand-orange pb-1"
+                        : "text-white/90"
+                    }`}
+                  >
+                    {item.name}
+                  </button>
+                ) : (
+                  <Link
+                    to={item.path}
+                    className={`text-sm font-medium transition-colors hover:text-brand-orange ${
+                      isActive(item.path)
+                        ? "text-brand-orange border-b-2 border-brand-orange pb-1"
+                        : "text-white/90"
+                    }`}
+                  >
+                    {item.name}
+                  </Link>
+                )}
+              </div>
             ))}
           </div>
 
@@ -77,18 +92,35 @@ const Navigation = () => {
         <div className="md:hidden bg-black/30 backdrop-blur-md border-t border-white/10">
           <div className="px-2 pt-2 pb-3 space-y-1">
             {navItems.map((item) => (
-              <Link
-                key={item.path}
-                to={item.path}
-                className={`block px-3 py-2 text-base font-medium transition-colors hover:text-brand-orange hover:bg-white/5 rounded-md ${
-                  isActive(item.path)
-                    ? "text-brand-orange bg-white/10"
-                    : "text-white/90"
-                }`}
-                onClick={() => setIsOpen(false)}
-              >
-                {item.name}
-              </Link>
+              <div key={item.path}>
+                {item.redirectToMaintenance ? (
+                  <button
+                    onClick={() => {
+                      navigate('/maintenance');
+                      setIsOpen(false);
+                    }}
+                    className={`block w-full text-left px-3 py-2 text-base font-medium transition-colors hover:text-brand-orange hover:bg-white/5 rounded-md cursor-pointer ${
+                      isActive(item.path)
+                        ? "text-brand-orange bg-white/10"
+                        : "text-white/90"
+                    }`}
+                  >
+                    {item.name}
+                  </button>
+                ) : (
+                  <Link
+                    to={item.path}
+                    className={`block px-3 py-2 text-base font-medium transition-colors hover:text-brand-orange hover:bg-white/5 rounded-md ${
+                      isActive(item.path)
+                        ? "text-brand-orange bg-white/10"
+                        : "text-white/90"
+                    }`}
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {item.name}
+                  </Link>
+                )}
+              </div>
             ))}
           </div>
         </div>

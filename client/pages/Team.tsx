@@ -1,6 +1,8 @@
 import Navigation from "@/components/Navigation";
 import { Link } from "react-router-dom";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import {
@@ -195,8 +197,21 @@ export default function Team() {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white font-sans">
-      <Navigation />
+    <>
+      <SEO 
+        title="Our Team"
+        description="Meet the talented team behind CGU Space Club - from experienced coordinators to passionate student leaders driving innovation in space technology."
+        keywords="CGU Space Club team, space club coordinators, student leaders, space technology team, Bhubaneswar space club members"
+      />
+      <div className="min-h-screen bg-black text-white font-sans">
+        <Navigation />
+
+        {/* Breadcrumbs */}
+        <section className="py-8 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <Breadcrumbs />
+          </div>
+        </section>
 
       {/* Hero Section with Background */}
       <section className="relative py-20 sm:px-6 lg:px-8 overflow-hidden">
@@ -495,5 +510,6 @@ export default function Team() {
 
       <Footer />
     </div>
+    </>
   );
 }
