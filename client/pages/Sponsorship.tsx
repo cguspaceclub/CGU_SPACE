@@ -22,6 +22,7 @@ import {
   Handshake,
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import SpaceImageStrip from "@/components/SpaceImageStrip";
 
 export default function Sponsorship() {
   const navigate = useNavigate();
@@ -240,6 +241,8 @@ export default function Sponsorship() {
           </div>
         </div>
       </section>
+
+      <SpaceImageStrip />
 
       {/* Partnership Benefits */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-black via-brand-gray-900 to-black">

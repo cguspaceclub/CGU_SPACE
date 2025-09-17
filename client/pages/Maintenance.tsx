@@ -189,7 +189,7 @@ export default function Maintenance() {
             </div>
           </div>
           
-          <h1 className="font-display text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-brand-orange to-brand-red bg-clip-text text-transparent animate-pulse">
+          <h1 className="font-display text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent animate-pulse">
             Under Maintenance
           </h1>
           
@@ -230,6 +230,7 @@ export default function Maintenance() {
           </div>
         </div>
       </section>
+
 
       {/* Maintenance Info */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">

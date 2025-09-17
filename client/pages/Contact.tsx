@@ -160,19 +160,43 @@ export default function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000));
+    try {
+      // Create mailto link with form data
+      const subject = encodeURIComponent(`Contact Form: ${formData.subject}`);
+      const body = encodeURIComponent(`
+Name: ${formData.firstName} ${formData.lastName}
+Email: ${formData.email}
+Phone: ${formData.phone}
+Subject: ${formData.subject}
+
+Message:
+${formData.message}
+
+---
+This message was sent from the CGU Space Club contact form.
+      `);
+      
+      // Open email client with pre-filled data
+      const mailtoLink = `mailto:spacesystems@cgu-odisha.ac.in?subject=${subject}&body=${body}`;
+      window.location.href = mailtoLink;
+      
+      // Show success message
+      alert("Your email client will open with the message pre-filled. Please send the email to complete the contact process.");
+      
+      // Reset form
+      setFormData({
+        firstName: '',
+        lastName: '',
+        phone: '',
+        email: '',
+        subject: '',
+        message: ''
+      });
+    } catch (error) {
+      console.error('Error opening email client:', error);
+      alert("There was an error opening your email client. Please try again or contact us directly at spacesystems@cgu-odisha.ac.in");
+    }
     
-    // Show success message
-    alert("Message sent successfully! We'll get back to you soon.");
-    setFormData({
-      firstName: '',
-      lastName: '',
-      phone: '',
-      email: '',
-      subject: '',
-      message: ''
-    });
     setIsSubmitting(false);
   };
 
@@ -220,6 +244,7 @@ export default function Contact() {
           <Breadcrumbs />
         </div>
       </section>
+
 
       {/* Contact Methods */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-black via-brand-gray-900 to-black">
@@ -301,7 +326,7 @@ export default function Contact() {
                    </div>
                  </CardTitle>
                 <p className="text-white/70 font-medium relative z-10">
-                  Fill out the form below and we'll get back to you within 24 hours
+                  Fill out the form below and your email client will open with the message pre-filled to spacesystems@cgu-odisha.ac.in
                 </p>
               </CardHeader>
               <CardContent className="space-y-6 relative z-10">
@@ -400,7 +425,7 @@ export default function Contact() {
                     ) : (
                       <div className="flex items-center">
                         <Send className="mr-2 h-4 w-4" />
-                        Send Message
+                        Email
                         <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
                       </div>
                     )}
@@ -452,14 +477,12 @@ export default function Contact() {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="flex items-start space-x-3">
+                  <div className="flex items-start space-x-3">
                   <MapPin className="w-5 h-5 text-brand-light-orange mt-1 group-hover:scale-110 transition-transform duration-300" />
                   <div>
                     <p className="text-white/90 font-medium group-hover:text-brand-light-orange transition-colors duration-300">
-                      CV Raman Global University
+                      C. V. Raman Global University Bhubaneswar, Odisha, India
                     </p>
-                    <p className="text-white/70">Bidya Nagar,Mahura,Janla</p>
-                    <p className="text-white/70">Bhubaneswar -752054</p>
                   </div>
                 </div>
               </CardContent>

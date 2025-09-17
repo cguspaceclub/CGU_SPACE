@@ -26,17 +26,19 @@ export default function Team() {
         "Leading our space exploration initiatives fueling the creativity and ideas. Asso. Proffesor and President at ECE Department in CGU.",
       color: "orange",
       achievements: ["NASA Internship", "3 Published Papers", "AIAA Award"],
+      linkedin: "https://www.linkedin.com/in/smita-rani-parija",
     },
     {
       id: 2,
       name: "Dr. Soumya Mishra",
-      role: "Co-Ordinator",
+      role: "Custodian",
       image:
         "soumya_maam.jpg",
       description:
         "Managing club operations and coordinating with our students to help them achieve their goal. Asso. Proffessor and Custodian at Ece Department.",
       color: "red",
       achievements: ["SpaceX Internship", "Rocketry Champion", "IEEE Member"],
+      linkedin: "https://www.linkedin.com/in/soumya-mishra",
     },
     {
       id: 3,
@@ -48,6 +50,7 @@ export default function Team() {
         "Leading our research initiatives in space technology and materials science.",
       color: "light-orange",
       achievements: ["NASA Researcher", "5 Patents", "Space Grant"],
+      linkedin: "https://www.linkedin.com/in/debadutta-sahoo",
     },
     {
       id: 4,
@@ -59,6 +62,7 @@ export default function Team() {
         "Overseeing Satellite development and projects, to turn the ideas of us students into reality.",
       color: "orange",
       achievements: ["Blue Origin Intern", "CAD Expert", "Design Award"],
+      linkedin: "https://www.linkedin.com/in/rahul-kumar-gupta-784bab284/",
     },
     {
       id: 5,
@@ -70,6 +74,7 @@ export default function Team() {
         "Ensuring all projects is being handeled effeciently and effectively, while handeling the communication within the team",
       color: "red",
       achievements: ["Safety Certified", "OSHA Trainer", "Risk Assessment"],
+      linkedin: "https://www.linkedin.com/in/debankur-pal",
     },
     {
       id: 6,
@@ -81,6 +86,7 @@ export default function Team() {
         "Creating and Overseeing budgets and possible fun raisers, to be able bring the project to light and giving it a physical form.",
       color: "light-orange",
       achievements: ["PR Specialist", "TEDx Speaker", "Media Relations"],
+      linkedin: "https://www.linkedin.com/in/aditi-singh",
     },
     {
       id: 7,
@@ -92,6 +98,7 @@ export default function Team() {
         "Helping the team in transitioning the ideas into perspective, to help the technological world",
       color: "orange",
       achievements: ["PR Specialist", "TEDx Speaker", "Media Relations"],
+      linkedin: "https://www.linkedin.com/in/nilkamal-ghosh",
     },
     {
       id: 8,
@@ -103,17 +110,19 @@ export default function Team() {
         "Helping the team in transitioning the ideas into perspective, to help the technological world",
       color: "red",
       achievements: ["PR Specialist", "TEDx Speaker", "Media Relations"],
+      linkedin: "https://www.linkedin.com/in/asmita-agarwal",
     },
     {
       id: 9,
       name: "Smita Nayak",
-      role: "Student Volunteer",
+      role: "Student Photographer",
       image:
         "smita_nayak.jpg",
       description:
-        "Helping the team in transitioning the ideas into perspective, to help the technological world",
+        "Capturing our space exploration journey through photography and visual storytelling.",
       color: "light-orange",
       achievements: ["PR Specialist", "TEDx Speaker", "Media Relations"],
+      linkedin: "https://www.linkedin.com/in/smita-nayak",
     },
     {
       id: 10,
@@ -125,6 +134,7 @@ export default function Team() {
         "Helping the team in transitioning the ideas into perspective, to help the technological world",
       color: "orange",
       achievements: ["PR Specialist", "TEDx Speaker", "Media Relations"],
+      linkedin: "https://www.linkedin.com/in/nitish-giri",
     },
     // {
     //   id: 11,
@@ -140,12 +150,24 @@ export default function Team() {
     {
       id: 11,
       name: "Ramakanta Senapati",
-      role: "Student Volunteer",
+      role: "Graphic Designer",
       image:
         "ramakant.jpg",
       description:
-        "Helping the team in transitioning the ideas into perspective, to help the technological world",
+        "Creating visual designs and graphics for our space projects and club materials.",
+      color: "orange",
       achievements: ["PR Specialist", "TEDx Speaker", "Media Relations"],
+      linkedin: "https://www.linkedin.com/in/ramakanta-senapati",
+    },
+    {
+      id: 12,
+      name: "Pryan",
+      role: "Student Volunteer",
+      image: "president.jpg",
+      description: "Supporting our space exploration initiatives and helping with various club activities.",
+      color: "red",
+      achievements: ["Space Enthusiast", "Team Player", "Innovation Focused"],
+      linkedin: "https://www.linkedin.com/in/pryan",
     },
   ];
 
@@ -198,171 +220,166 @@ export default function Team() {
     <div className="min-h-screen bg-black text-white font-sans">
       <Navigation />
 
-      {/* Hero Section with Background */}
-      <section className="relative py-20 sm:px-6 lg:px-8 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img
-            src="/HeroImage3c.jpg" //the background image at the top.
-            alt="Diverse scientists working together in modern laboratory"
-            className="w-full h-full object-cover scale-100"
+      {/* Meet Your Team Section */}
+      <section className="relative py-32 overflow-hidden">
+        {/* Full section background image */}
+        <div className="absolute inset-0">
+          <img 
+            src="/HeroImage3c.jpg" 
+            alt="CGU Space Club Team Background" 
+            className="w-full h-full object-cover object-center"
+            style={{ objectPosition: 'center 5%' }}
           />
-          <div className="absolute inset-0 bg-black/50" />
-          <div className="absolute inset-0 bg-gradient-to-r from-brand-orange/3 to-brand-red/3" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-black/80"></div>
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto">
-          <div className="text-center "> {/* removed mb-16 */}
-            <h1 className="font-display text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-brand-orange to-brand-red bg-clip-text text-transparent drop-shadow-lg">
-              {/* Meet Our Team */}Leadership Team
-            </h1>
-            <p className="text-xl text-white/90 max-w-3xl mx-auto font-medium leading-relaxed">
-              The passionate individuals driving our mission to explore space
-              and inspire the next generation of space explorers
-            </p>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Section Title */}
+          <div className="text-center mb-16">
+            <div className="inline-block mb-6">
+              <div className="w-16 h-1 bg-gradient-to-r from-transparent via-silver to-transparent mx-auto mb-4"></div>
+              <h1 className="font-display text-5xl md:text-7xl font-black mb-6 bg-gradient-to-r from-white via-silver to-white bg-clip-text text-transparent drop-shadow-2xl">
+                OUR TEAM
+              </h1>
+              <div className="w-16 h-1 bg-gradient-to-r from-transparent via-silver to-transparent mx-auto"></div>
+            </div>
           </div>
 
-          {/* Stats Section */}
-          {/* <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20">
-            {stats.map((stat, index) => (
-              <div
-                key={index}
-                className="bg-black/40 border border-white/20 rounded-xl p-6 text-center hover:border-brand-orange/50 transition-all duration-300"
-              >
-                <stat.icon className="w-8 h-8 text-brand-orange mx-auto mb-3" />
-                <div className="text-3xl font-bold text-white mb-1">
-                  {stat.number}
-                </div>
-                <div className="text-white/70 text-sm font-medium">
-                  {stat.label}
-                </div>
-              </div>
-            ))}
-          </div> */}
+          {/* Enhanced Gradient Divider */}
+          <div className="relative mb-16">
+            <div className="h-px bg-gradient-to-r from-transparent via-silver/80 to-transparent"></div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-gradient-to-r from-silver/20 to-white/10 rounded-full shadow-2xl flex items-center justify-center border border-silver/30">
+              <div className="w-3 h-3 bg-silver rounded-full shadow-lg"></div>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Team Members Section */}
-      <section className="py-10 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black/50 to-black" >
+      {/* Individual Team Portraits */}
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-black via-gray-900 to-black">
         <div className="max-w-7xl mx-auto">
-          {/* <div className="text-center mb-16"> //**the old Leadership title that was right beloe the picture.**
-            <h2 className="font-display text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-brand-orange to-brand-red bg-clip-text text-transparent">
-              Leadership Team
+          {/* Section Subtitle */}
+          <div className="text-center mb-16">
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
+              Leadership & Team Members
             </h2>
-            <p className="text-lg text-white/80 max-w-2xl mx-auto font-medium">
-              Meet the experts leading our space exploration initiatives
+            <p className="text-silver/80 text-lg max-w-2xl mx-auto">
+              The dedicated individuals who make our space exploration dreams a reality
             </p>
-          </div> */}
+          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {teamMembers.map((member) => {
-              const colors = getColorClasses(member.color);
-              return (
-                <Card
-                  key={member.id}
-                  className={`bg-white/5 backdrop-blur-sm ${colors.border} hover:bg-white/10 transition-all duration-500 hover:scale-105 ${colors.shadow} group`}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-10 mb-24">
+            {teamMembers.map((member, index) => (
+              <div 
+                key={member.id} 
+                className="text-center group cursor-pointer hover:scale-105 transition-transform duration-300"
+                onClick={() => window.open(member.linkedin, '_blank')}
+                title="Click to view LinkedIn profile"
+              >
+                <div className="relative mb-8">
+                  {/* Portrait with enhanced styling */}
+                  <div className="relative w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-silver/40 group-hover:border-silver/80 transition-all duration-500 shadow-2xl group-hover:shadow-3xl">
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                  </div>
+                  
+                  {/* Enhanced glow effect */}
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-r from-silver/20 via-transparent to-silver/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 scale-110"></div>
+                  
+                  {/* LinkedIn indicator */}
+                  <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2">
+                    <div className="w-6 h-6 bg-gradient-to-r from-blue-600 to-blue-500 rounded-full border border-blue-400 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                      <Linkedin className="w-3 h-3 text-white" />
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Name and Role with enhanced typography */}
+                <h3 className="text-white font-bold text-base mb-3 group-hover:text-silver transition-colors duration-300 leading-tight">
+                  {member.name}
+                </h3>
+                <p className="text-silver/90 text-sm font-semibold group-hover:text-silver transition-colors duration-300 uppercase tracking-wide">
+                  {member.role}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          {/* Call to Action */}
+          <div className="text-center bg-gradient-to-r from-black/50 via-gray-900/50 to-black/50 rounded-3xl p-12 border border-silver/20">
+            <div className="mb-10">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+                Ready to Join Our Mission?
+              </h2>
+              <p className="text-silver/90 text-xl max-w-3xl mx-auto leading-relaxed">
+                Be part of our space exploration journey and contribute to groundbreaking projects that push the boundaries of human knowledge
+              </p>
+            </div>
+            
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+              <Link to="/contact">
+                <Button 
+                  size="lg" 
+                  className="bg-gradient-to-r from-silver/30 to-white/20 hover:from-silver/40 hover:to-white/30 text-white border border-silver/40 hover:border-silver/60 px-12 py-5 text-xl font-bold tracking-wider transition-all duration-500 hover:scale-105 shadow-2xl hover:shadow-3xl"
                 >
-                  <CardHeader className="text-center p-6">
-                    <div className="relative mb-4">
-                      <div className="w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-white/20 group-hover:border-white/40 transition-all duration-300">
-                        <img
-                          src={member.image}
-                          alt={member.name}
-                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                        />
-                      </div>
-                      <div
-                        className={`absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-8 h-8 rounded-full ${colors.bg} flex items-center justify-center shadow-lg`}
-                      >
-                        <Award className="w-4 h-4 text-white" />
-                      </div>
-                    </div>
-                    <CardTitle className="text-xl font-bold text-white mb-2">
-                      {member.name}
-                    </CardTitle>
-                    <p className={`${colors.text} font-medium mb-3`}>
-                      {member.role}
-                    </p>
-                  </CardHeader>
-                  {/* <CardContent className="px-6 pb-6">
-                    <p className="text-white/80 text-sm mb-4 font-normal leading-relaxed">
-                      {member.description}
-                    </p>
-
-                    
-                    <div className="mb-4">
-                      <h4 className="text-white font-medium text-xs mb-2 uppercase tracking-wide">
-                        Achievements
-                      </h4>
-                      <div className="flex flex-wrap gap-1">
-                        {member.achievements.map((achievement, index) => (
-                          <span
-                            key={index}
-                            className="px-2 py-1 bg-white/10 text-white/70 text-xs rounded-full"
-                          >
-                            {achievement}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-
-                    
-                    <div className="flex justify-center space-x-4 pt-4 border-t border-white/10">
-                      <Github
-                        className={`w-5 h-5 text-white/60 ${colors.hover} cursor-pointer transition-colors`}
-                      />
-                      <Linkedin
-                        className={`w-5 h-5 text-white/60 ${colors.hover} cursor-pointer transition-colors`}
-                      />
-                      <Mail
-                        className={`w-5 h-5 text-white/60 ${colors.hover} cursor-pointer transition-colors`}
-                      />
-                    </div>
-                  </CardContent> */}
-                </Card>
-              );
-            })}
+                  JOIN OUR TEAM
+                </Button>
+              </Link>
+              <Link to="/projects">
+                <Button 
+                  size="lg" 
+                  variant="outline"
+                  className="border-silver/40 hover:border-silver/60 text-silver hover:text-white px-12 py-5 text-xl font-bold tracking-wider transition-all duration-500 hover:scale-105"
+                >
+                  VIEW PROJECTS
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Values Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-black via-brand-gray-900 to-black">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-black via-gray-900 to-black">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="font-display text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-brand-orange to-brand-red bg-clip-text text-transparent">
+            <h2 className="font-display text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-white via-silver to-white bg-clip-text text-transparent">
               Our Values
             </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center group">
-              <div className="w-20 h-20 mx-auto mb-4 bg-gradient-to-r from-brand-orange to-brand-red rounded-full flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform duration-300">
-                <Target className="w-10 h-10 text-white" />
+              <div className="w-20 h-20 mx-auto mb-4 bg-gradient-to-r from-silver/20 to-white/10 rounded-full flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform duration-300 border border-silver/30">
+                <Target className="w-10 h-10 text-silver" />
               </div>
               <h3 className="text-xl font-bold text-white mb-3">Innovation</h3>
-              <p className="text-white/70 font-medium">
+              <p className="text-silver/70 font-medium">
                 Pushing the boundaries of space technology and exploration
               </p>
             </div>
 
             <div className="text-center group">
-              <div className="w-20 h-20 mx-auto mb-4 bg-gradient-to-r from-brand-red to-brand-light-orange rounded-full flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform duration-300">
-                <Users className="w-10 h-10 text-white" />
+              <div className="w-20 h-20 mx-auto mb-4 bg-gradient-to-r from-white/10 to-silver/20 rounded-full flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform duration-300 border border-silver/30">
+                <Users className="w-10 h-10 text-silver" />
               </div>
               <h3 className="text-xl font-bold text-white mb-3">
                 Collaboration
               </h3>
-              <p className="text-white/70 font-medium">
+              <p className="text-silver/70 font-medium">
                 Working together to achieve extraordinary results
               </p>
             </div>
 
             <div className="text-center group">
-              <div className="w-20 h-20 mx-auto mb-4 bg-gradient-to-r from-brand-light-orange to-brand-orange rounded-full flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform duration-300">
-                <Zap className="w-10 h-10 text-white" />
+              <div className="w-20 h-20 mx-auto mb-4 bg-gradient-to-r from-silver/20 to-white/10 rounded-full flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform duration-300 border border-silver/30">
+                <Zap className="w-10 h-10 text-silver" />
               </div>
               <h3 className="text-xl font-bold text-white mb-3">Excellence</h3>
-              <p className="text-white/70 font-medium">
+              <p className="text-silver/70 font-medium">
                 Striving for the highest standards in everything we do
               </p>
             </div>
@@ -371,101 +388,71 @@ export default function Team() {
       </section>
 
       {/* Join Team CTA with Background */}
-      <section className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
-        {/* Background Image */}
-        <div className="absolute inset-0 z-0">
-          <img
-            src="/earth.jpg"
-            alt="planet surface"
-            className="w-full h-full object-cover scale-100"
-          />
-          <div className="absolute inset-0 bg-black/45" />
-          <div className="absolute inset-0 bg-gradient-to-r from-brand-orange/4 via-brand-red/3 to-brand-orange/4" />
+      <section className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden bg-gradient-to-b from-black via-gray-900 to-black">
+        {/* Subtle starry background */}
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-800" />
+          
+          {/* Animated starry patterns */}
+          <div className="absolute inset-0">
+            <div className="absolute top-16 left-8 w-1 h-1 bg-silver/60 rounded-full animate-pulse" />
+            <div className="absolute top-32 left-1/4 w-1 h-1 bg-white/40 rounded-full animate-pulse" />
+            <div className="absolute top-48 right-1/3 w-1 h-1 bg-silver/50 rounded-full animate-pulse" />
+            <div className="absolute top-1/3 left-16 w-1 h-1 bg-white/30 rounded-full animate-pulse" />
+            <div className="absolute bottom-40 left-1/2 w-1 h-1 bg-silver/70 rounded-full animate-pulse" />
+            <div className="absolute bottom-20 right-16 w-1 h-1 bg-white/50 rounded-full animate-pulse" />
+            <div className="absolute bottom-1/4 right-1/4 w-1 h-1 bg-silver/40 rounded-full animate-pulse" />
+            <div className="absolute top-1/2 right-8 w-1 h-1 bg-white/60 rounded-full animate-pulse" />
+            <div className="absolute top-2/3 left-1/3 w-1 h-1 bg-silver/50 rounded-full animate-pulse" />
+          </div>
         </div>
-
-        {/* Animated background elements
-        <div className="absolute inset-0 z-0">
-          <div className="absolute top-20 left-10 w-2 h-2 bg-brand-orange rounded-full animate-pulse"></div>
-          <div className="absolute top-40 right-20 w-3 h-3 bg-brand-red rounded-full animate-bounce"></div>
-          <div className="absolute bottom-30 left-1/4 w-1 h-1 bg-brand-light-orange rounded-full animate-ping"></div>
-          <div className="absolute top-60 left-3/4 w-2 h-2 bg-brand-orange rounded-full animate-pulse"></div>
-        </div> */}
 
         <div className="relative z-10 max-w-4xl mx-auto text-center">
           <div className="mb-12">
-            <h2 className="font-display text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-brand-orange to-brand-red bg-clip-text text-transparent drop-shadow-lg">
+            <h2 className="font-display text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white via-silver to-white bg-clip-text text-transparent drop-shadow-lg">
               Want to Join Our Team?
             </h2>
-            <p className="text-xl text-white/90 mb-8 font-medium leading-relaxed max-w-3xl mx-auto">
+            <p className="text-xl text-silver/90 mb-8 font-medium leading-relaxed max-w-3xl mx-auto">
               We're always looking for passionate individuals to join our
               mission. Whether you're a student, researcher, or industry
               professional, there's a place for you here.
             </p>
           </div>
 
-          {/* Benefits Grid
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-            <div className="bg-black/40 border border-white/20 rounded-xl p-6 hover:border-brand-orange/50 transition-all duration-300 hover:scale-105">
-              <Award className="w-12 h-12 text-brand-orange mx-auto mb-4" />
-              <h3 className="text-lg font-bold text-white mb-2">
-                Learn & Grow
-              </h3>
-              <p className="text-white/80 text-sm font-medium">
-                Access to cutting-edge technology and mentorship
-              </p>
-            </div>
-
-            <div className="bg-black/40 border border-white/20 rounded-xl p-6 hover:border-brand-red/50 transition-all duration-300 hover:scale-105">
-              <Users className="w-12 h-12 text-brand-red mx-auto mb-4" />
-              <h3 className="text-lg font-bold text-white mb-2">Network</h3>
-              <p className="text-white/80 text-sm font-medium">
-                Connect with industry professionals and alumni
-              </p>
-            </div>
-
-            <div className="bg-black/40 border border-white/20 rounded-xl p-6 hover:border-brand-light-orange/50 transition-all duration-300 hover:scale-105">
-              <Zap className="w-12 h-12 text-brand-light-orange mx-auto mb-4" />
-              <h3 className="text-lg font-bold text-white mb-2">Impact</h3>
-              <p className="text-white/80 text-sm font-medium">
-                Work on real projects that advance space exploration
-              </p>
-            </div>
-          </div> */}
-
           {/* Application Process */}
-          <div className="bg-black/30 border border-white/20 rounded-2xl p-8 mb-8">
+          <div className="bg-black/30 border border-silver/20 rounded-2xl p-8 mb-8">
             <h3 className="font-display text-2xl font-bold text-white mb-6">
               Application Process
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
               <div className="relative">
-                <div className="w-12 h-12 bg-gradient-to-r from-brand-orange to-brand-red rounded-full flex items-center justify-center mx-auto mb-3 text-white font-bold text-lg shadow-lg">
+                <div className="w-12 h-12 bg-gradient-to-r from-silver/20 to-white/10 rounded-full flex items-center justify-center mx-auto mb-3 text-white font-bold text-lg shadow-lg border border-silver/30">
                   1
                 </div>
                 <h4 className="font-bold text-white mb-2">
                   Submit Application
                 </h4>
-                <p className="text-white/70 text-sm">
+                <p className="text-silver/70 text-sm">
                   Submit your resume with your background and interests
                 </p>
               </div>
 
               <div className="relative">
-                <div className="w-12 h-12 bg-gradient-to-r from-brand-red to-brand-light-orange rounded-full flex items-center justify-center mx-auto mb-3 text-white font-bold text-lg shadow-lg">
+                <div className="w-12 h-12 bg-gradient-to-r from-white/10 to-silver/20 rounded-full flex items-center justify-center mx-auto mb-3 text-white font-bold text-lg shadow-lg border border-silver/30">
                   2
                 </div>
                 <h4 className="font-bold text-white mb-2">Interview</h4>
-                <p className="text-white/70 text-sm">
+                <p className="text-silver/70 text-sm">
                   Meet with our team to discuss your goals and experience
                 </p>
               </div>
 
               <div className="relative">
-                <div className="w-12 h-12 bg-gradient-to-r from-brand-light-orange to-brand-orange rounded-full flex items-center justify-center mx-auto mb-3 text-white font-bold text-lg shadow-lg">
+                <div className="w-12 h-12 bg-gradient-to-r from-silver/20 to-white/10 rounded-full flex items-center justify-center mx-auto mb-3 text-white font-bold text-lg shadow-lg border border-silver/30">
                   3
                 </div>
                 <h4 className="font-bold text-white mb-2">Welcome Aboard</h4>
-                <p className="text-white/70 text-sm">
+                <p className="text-silver/70 text-sm">
                   Join our team and start working on exciting projects
                 </p>
               </div>
@@ -477,13 +464,7 @@ export default function Team() {
             <Link to="/contact">
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-brand-orange to-brand-red 
-               hover:from-brand-light-orange hover:to-brand-dark-red 
-               text-white px-12 py-4 text-lg font-bold 
-               shadow-2xl hover:shadow-brand-orange/40 
-               transition-all duration-500 
-               hover:scale-110 
-               border border-brand-orange/30"
+                className="bg-gradient-to-r from-silver/20 to-white/10 hover:from-silver/30 hover:to-white/20 text-white border border-silver/30 hover:border-silver/50 px-12 py-4 text-lg font-bold tracking-wider transition-all duration-500 hover:scale-105"
               >
                 <Users className="mr-2 h-5 w-5" />
                 Contact Us
