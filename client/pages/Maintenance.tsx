@@ -75,15 +75,14 @@ export default function Maintenance() {
     {
       icon: Phone,
       title: "Call Us",
-      primary: "+91 8908828802",
-      secondary: "+91 9798376027",
+      primary: "+91 9438913032",
       description: "Speak directly with our team members",
       color: "red",
     },
     {
       icon: MapPin,
       title: "Visit Us",
-      primary: "CV Raman Global University",
+      primary: "C.V. Raman Global University",
       secondary: "Bidya Nagar,Mahura,Janla,Bhubaneswar -752054",
       description: "Come see our facilities and meet the team",
       color: "light-orange",

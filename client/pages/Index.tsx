@@ -183,7 +183,7 @@ function ProjectCarousel() {
       id: 2,
       title: "Rocket Alpha", 
       description: "Hybrid propulsion prototyping & avionics testing",
-      background: "https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?auto=format&fit=crop&w=800&q=80",
+      background: "https://images.unsplash.com/photo-1572224104782-91a08d296390?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8c2F0ZWxsaXRlfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=600?auto=format&fit=crop&w=800&q=80",
       icon: "🚀",
     },
     {
