@@ -74,7 +74,7 @@ export default function Index() {
           {/* Right Panel - Saturn/Planet Image */}
           <div className="w-full lg:w-1/2 relative overflow-hidden bg-black h-[50vh] lg:h-screen">
             <img 
-              src="https://images.unsplash.com/photo-1614732414444-096e5f1122d5?auto=format&fit=crop&w=2000&q=90" 
+              src="https://images.unsplash.com/photo-1669287731461-bd8ce3126710?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=687?auto=format&fit=crop&w=2000&q=90" 
               alt="Saturn in space" 
               className="w-full h-full object-cover"
               onError={(e) => { (e.currentTarget as HTMLImageElement).src = 'https://images.unsplash.com/photo-1502134249126-9f3755a50d78?auto=format&fit=crop&w=2000&q=90'; }}
