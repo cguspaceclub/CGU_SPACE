@@ -30,7 +30,7 @@ const Footer = () => {
             </div>
 
             <p className="text-sm text-white/70 mb-2 max-w-md">
-             C V Raman Global University,
+             C.V. Raman Global University,
               <br />
              Bidya Nagar,Mahura,Janla,
               <br />
@@ -119,7 +119,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center text-white/70">
                 <Phone className="w-4 h-4 mr-2" />
-                <span className="text-sm">+91 8908828802, 9798376027</span>
+                <span className="text-sm">+91 9438913032</span>
               </li>
               <li className="space-x-9 py-3">
                 <button

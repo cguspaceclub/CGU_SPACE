@@ -154,6 +154,50 @@
     }
   }
 
+  @keyframes slide-in-from-top {
+    from {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slide-in-from-bottom {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slide-in-from-left {
+    from {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slide-in-from-right {
+    from {
+      opacity: 0;
+      transform: translateX(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
   @keyframes float-up {
     0%, 100% {
       transform: translateY(0px);
@@ -254,6 +298,22 @@
     animation: fade-in 1s ease-out forwards;
   }
 
+  .animate-slide-in-top {
+    animation: slide-in-from-top 0.6s ease-out forwards;
+  }
+
+  .animate-slide-in-bottom {
+    animation: slide-in-from-bottom 0.6s ease-out forwards;
+  }
+
+  .animate-slide-in-left {
+    animation: slide-in-from-left 0.6s ease-out forwards;
+  }
+
+  .animate-slide-in-right {
+    animation: slide-in-from-right 0.6s ease-out forwards;
+  }
+
   .animate-float-up {
     animation: float-up 3s ease-in-out infinite;
   }
@@ -293,5 +353,37 @@
 
   .group:hover .animate-star-twinkle {
     animation-duration: 0.5s;
+  }
+
+  /* Smooth focus states for better accessibility */
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid rgba(255, 107, 53, 0.6);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  /* Enhanced glow effect for interactive elements */
+  .glow-on-hover {
+    transition: box-shadow 0.3s ease;
+  }
+
+  .glow-on-hover:hover {
+    box-shadow: 0 0 20px rgba(255, 107, 53, 0.4);
+  }
+
+  /* Background gradient overlay for depth */
+  .gradient-overlay {
+    background: linear-gradient(
+      135deg,
+      rgba(255, 107, 53, 0.05) 0%,
+      rgba(211, 47, 47, 0.05) 100%
+    );
+  }
+
+  /* Smooth transitions for interactive elements */
+  a, button, input, select, textarea {
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
   }
 }

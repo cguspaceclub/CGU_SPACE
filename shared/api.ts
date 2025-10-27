@@ -9,4 +9,7 @@
  */
 export interface DemoResponse {
   message: string;
+  timestamp?: string;
+  version?: string;
+  status?: string;
 }

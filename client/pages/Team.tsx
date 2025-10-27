@@ -159,16 +159,6 @@ export default function Team() {
       achievements: ["PR Specialist", "TEDx Speaker", "Media Relations"],
       linkedin: "https://www.linkedin.com/in/ramakanta-senapati",
     },
-    {
-      id: 12,
-      name: "Pryan",
-      role: "Student Volunteer",
-      image: "president.jpg",
-      description: "Supporting our space exploration initiatives and helping with various club activities.",
-      color: "red",
-      achievements: ["Space Enthusiast", "Team Player", "Innovation Focused"],
-      linkedin: "https://www.linkedin.com/in/pryan",
-    },
   ];
 
   // const stats = [
