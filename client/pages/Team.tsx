@@ -67,7 +67,7 @@ export default function Team() {
     {
       id: 5,
       name: "Debankur Pal",
-      role: "Student Secretary",
+      role: "0101",
       image:
         "dabankur_pal.jpg",
       description:
