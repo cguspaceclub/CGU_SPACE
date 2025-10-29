@@ -50,7 +50,7 @@ export default function Team() {
         "Leading our research initiatives in space technology and materials science.",
       color: "light-orange",
       achievements: ["NASA Researcher", "5 Patents", "Space Grant"],
-      linkedin: "www.linkedin.com/in/debadutta-sahoo-338a58268",
+      linkedin: "https://www.linkedin.com/in/debadutta-sahoo-338a58268",
     },
     {
       id: 4,
