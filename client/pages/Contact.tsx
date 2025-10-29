@@ -87,7 +87,7 @@ export default function Contact() {
       primary: "+91 94389 13032",
       description: "Speak directly with our team members",
       color: "red",
-      action: () => window.location.href = "tel:+918908828802"
+      action: () => window.location.href = "tel:+919438913032"
     },
     {
       icon: MapPin,
